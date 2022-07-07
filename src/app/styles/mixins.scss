@@ -1,0 +1,44 @@
+@import "colors";
+
+@mixin regular-style {
+  font-style: normal;
+  font-weight: normal;
+}
+
+@mixin regular-text {
+  @include regular-style;
+  font-size: 16px;
+  line-height: 22px;
+  color: $c-text-64;
+}
+
+@mixin primary-text {
+  @include regular-style;
+  font-size: 12px;
+  line-height: 17px;
+  color: $c-text-64;
+}
+
+@mixin secondary-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: $c-dark-base;
+}
+
+@mixin infoBlockText {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: $c-dark-base;
+}
+
+@mixin mainText {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 48px;
+  color: $c-dark-base;
+}
