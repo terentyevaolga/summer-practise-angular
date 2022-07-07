@@ -8,7 +8,15 @@
 @mixin text-44 {
   @include regular-style;
   font-size: 44px;
-  line-height: 48px;
+  line-height: 24px;
+  color: $c-text-100;
+  font-weight: bold;
+}
+
+@mixin text-38 {
+  @include regular-style;
+  font-size: 38px;
+  line-height: 24px;
   color: $c-text-100;
   font-weight: bold;
 }

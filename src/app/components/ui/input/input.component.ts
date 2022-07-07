@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-input',
@@ -9,4 +10,11 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 export class InputComponent{
 	@Input() type: 'text' | 'password' | 'email' = 'text'
 	@Input() placeholder: string = '';
+
+
+  input: FormControl = new FormControl('')
+
+  onChange: any = (value: any) => {
+    this.input.setValue(value);
+  }
 }

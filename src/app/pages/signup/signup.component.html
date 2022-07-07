@@ -1,3 +1,40 @@
-<div class=''>
-	signup page
-</div>
+<main class='main'>
+  <div class='main__container'>
+    <div class='main__block'>
+      <div>
+        <!--        форма входа-->
+        <div class="signupForm">
+          <div class="signupForm__container">
+            <h4>Создайте свой профиль</h4>
+
+            <div>
+              <app-input
+                class="signupForm__item"
+                placeholder='Имя'
+              ></app-input>
+              <app-input
+                placeholder='Фамилия'
+              ></app-input>
+              <app-input
+                placeholder='Электронная почта'
+              ></app-input>
+
+              <app-button
+                theme="BLUE"
+                [wide]=true
+              >Дальше
+              </app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='main__block__welcome'>
+        <h1>Добро пожаловать в Агону!</h1>
+        <p>Мы&nbsp;сделали Агону, чтобы учить тому, что хорошо умеем сами&nbsp;&mdash; создавать крутые цифровые
+          продукты</p>
+        <img src="/assets/signUp-page/main.svg" alt="welcome">
+      </div>
+    </div>
+  </div>
+</main>

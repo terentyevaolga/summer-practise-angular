@@ -1,0 +1,49 @@
+@import 'mixins';
+
+.main {
+  &__container {
+    max-width: 1180px;
+    margin: 160px auto;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__welcome {
+      max-width: 550px;
+
+      h1 {
+        @include text-38;
+      }
+      p {
+        @include text-16;
+        margin-top: 28px;
+        margin-bottom: 24px;
+      }
+      img {
+        width: 548px;
+        height: 548px;
+      }
+    }
+  }
+}
+
+.signupForm {
+  width: 468px;
+  height: 518px;
+  background-color: $c-light-blue;
+  border-radius: 16px;
+  padding: 28px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+}
