@@ -1,0 +1,22 @@
+<header>
+  <div class="header__container">
+    <div class="header">
+      <img src="/assets/img/logo.svg" alt="logo">
+      <nav class="header__menu">
+        <a routerLink="/"
+           class="header__link"
+           [routerLinkActiveOptions]='{exact:true}'
+           routerLinkActive="header__link__active"
+        >Главная</a>
+        <a routerLink="/"
+           class="header__link"
+           routerLinkActive="header__link__active"
+        >Мои курсы</a>
+        <div class="header__menu__profile">
+          <img src="/assets/img/bell.svg" alt="bell">
+          <img src="/assets/img/avatar.svg" alt="avatar">
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

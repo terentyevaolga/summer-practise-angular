@@ -1,0 +1,31 @@
+@import "mixins";
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  @include regular-text;
+  padding: 16px 25px;
+  cursor: pointer;
+  background: none;
+
+  &__blue {
+    @extend .btn;
+    background: $c-agona-blue;
+    color: $c-white;
+  }
+
+  &__grey {
+    @extend .btn;
+    background: $c-dark-grey;
+    color: $c-text-80;
+  }
+
+  &__default {
+    @extend .btn;
+    color: $c-text-100;
+    padding: 0;
+  }
+}

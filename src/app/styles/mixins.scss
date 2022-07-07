@@ -24,7 +24,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
-  color: $c-dark-base;
+  color: $c-text-100;
 }
 
 @mixin infoBlockText {
@@ -32,7 +32,7 @@
   font-weight: 600;
   font-size: 32px;
   line-height: 40px;
-  color: $c-dark-base;
+  color: $c-text-100;
 }
 
 @mixin mainText {
@@ -40,5 +40,5 @@
   font-weight: bold;
   font-size: 44px;
   line-height: 48px;
-  color: $c-dark-base;
+  color: $c-text-100;
 }
