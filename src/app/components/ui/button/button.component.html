@@ -1,11 +1,12 @@
 <button
-  [type]='type'
-  [style.color]='color'
-  class='btn'
-  [class.btn__blue]="theme === 'BLUE'"
-  [class.btn__grey]="theme === 'GREY'"
-  [class.btn__default]="theme === 'DEFAULT'"
-  (click)='submit.emit()'
+	class='btn'
+	[disabled]=disabled
+	[type]='type'
+	[class.btn__wide]='wide===true'
+	[class.btn__blue]="theme === 'BLUE'"
+	[class.btn__grey]="theme === 'GREY'"
+	[class.btn__default]="theme === 'DEFAULT'"
+	(click)='submit.emit()'
 >
-  <ng-content></ng-content>
+	<ng-content></ng-content>
 </button>

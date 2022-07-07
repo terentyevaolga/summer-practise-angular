@@ -1,1 +1,20 @@
-<p>main works!</p>
+<main class='main'>
+	<div class='main__container'>
+    <img src="/assets/main-page/bigA.svg" alt="alpha">
+    <div class='main__welcome'>
+      <h1>Привет, Рустем!</h1>
+      <p>Мы&nbsp;сделали Агону, чтобы учить тому, что хорошо умеем сами&nbsp;&mdash; создавать крутые цифровые
+        продукты.</p>
+    </div>
+
+		<section class='main__courses'>
+			<h3>Твои курсы</h3>
+
+      <div class='main__courses__list'>
+        <ng-container *ngIf='(courses$|async)!.length>0'>
+          <app-course-card></app-course-card>
+        </ng-container>
+      </div>
+		</section>
+	</div>
+</main>

@@ -1,0 +1,10 @@
+<div class='course'
+     *ngFor='let item of course$| async'
+>
+  <img src='{{item.img}}'
+       alt='letter'>
+  <div class="course__description">
+    <h3>{{item.title}}</h3>
+    <p>{{item.text}}</p>
+  </div>
+</div>

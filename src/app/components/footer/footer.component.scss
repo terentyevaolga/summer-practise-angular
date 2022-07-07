@@ -1,34 +1,31 @@
 @import "src/app/styles/mixins";
 
-.header {
+.footer {
   &__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     max-width: 1180px;
-    margin: 0 auto;
-    padding: 31px 0;
-  }
+    margin: 60px auto;
 
+    p {
+      @include text-12
+    }
+  }
   &__nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    column-gap: 40px;
+    column-gap: 28px;
 
     &__link {
-      @include text-16;
-    }
-
-    &__active-link {
-      padding: 9px 16px;
-      gap: 4px;
-      background: rgba(62, 80, 114, 0.08);
-      border-radius: 24px;
+      @include text-12;
+      text-decoration: underline;
     }
   }
 }
+
 
 

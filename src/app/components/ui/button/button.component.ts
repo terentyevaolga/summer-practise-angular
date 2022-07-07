@@ -1,14 +1,16 @@
-import {Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'app-button',
+	templateUrl: './button.component.html',
+	styleUrls: ['./button.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
-  @Input() type: 'submit' | 'button' | 'reset' = 'button';
-  @Input() theme: 'BLUE' | 'GREY' | 'DEFAULT' = 'GREY'
-  @Input() color?: string
-  @Output() submit = new EventEmitter();
+	@Input() type: 'submit' | 'button' | 'reset' = 'button';
+	@Input() theme: 'BLUE' | 'GREY' | 'DEFAULT' = 'BLUE';
+	// @Input() color?: string
+	@Input() wide: boolean = false;
+	@Input() disabled: boolean = false;
+	@Output() submit = new EventEmitter();
 }

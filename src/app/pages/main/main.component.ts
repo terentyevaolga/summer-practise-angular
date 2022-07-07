@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {CoursesService} from "../../services/courses.service";
 
 @Component({
   selector: 'app-main',
@@ -7,8 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent implements OnInit {
+  courses$ = this.coursesService.courses$;
 
-  constructor() { }
+  constructor(
+    private coursesService: CoursesService
+  ) { }
 
   ngOnInit(): void {
   }

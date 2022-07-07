@@ -2,43 +2,51 @@
 
 @mixin regular-style {
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
 }
 
-@mixin regular-text {
+@mixin text-44 {
   @include regular-style;
-  font-size: 16px;
-  line-height: 22px;
-  color: $c-text-64;
-}
-
-@mixin primary-text {
-  @include regular-style;
-  font-size: 12px;
-  line-height: 17px;
-  color: $c-text-64;
-}
-
-@mixin secondary-text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  color: $c-text-100;
-}
-
-@mixin infoBlockText {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 40px;
-  color: $c-text-100;
-}
-
-@mixin mainText {
-  font-style: normal;
-  font-weight: bold;
   font-size: 44px;
   line-height: 48px;
   color: $c-text-100;
+  font-weight: bold;
 }
+
+@mixin text-28 {
+  @include regular-style;
+  font-size: 28px;
+  line-height: 32px;
+  color: $c-text-100;
+  font-weight: bold;
+}
+
+@mixin text-18 {
+  @include regular-style;
+  font-size: 18px;
+  line-height: 22px;
+  color: $c-text-100;
+  font-weight: bold;
+}
+
+@mixin text-16 {
+  @include regular-style;
+  font-size: 16px;
+  line-height: 22px;
+  color: $c-text-80;
+}
+
+@mixin text-14 {
+  @include regular-style;
+  font-size: 14px;
+  line-height: 20px;
+  color: $c-text-64
+}
+
+@mixin text-12 {
+  @include regular-style;
+  font-size: 12px;
+  line-height: 17px;
+  color: $c-text-64
+}
+

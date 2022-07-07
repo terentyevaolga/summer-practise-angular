@@ -1,0 +1,46 @@
+@import "src/app/styles/mixins";
+
+.main {
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+
+    img {
+      position: absolute;
+      right: -70px;
+      z-index: -3;
+      margin-top: -90px;
+    }
+  }
+  &__welcome {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 30vw;
+    h1 {
+      @include text-44;
+    }
+    p {
+      @include text-16;
+      margin-top: 10px;
+    }
+  }
+  &__courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      @include text-28;
+    }
+
+    &__list {
+      margin-top: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+}
