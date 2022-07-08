@@ -16,8 +16,20 @@
   position: relative;
   padding: 28px 28px 0 28px;
   margin-bottom: 24px;
+  color: $c-text-100;
 
-  img {
+  &:hover {
+    display: initial;
+    background-color: $c-blue;
+    color: $c-white;
+    cursor: pointer;
+
+    &__btn {
+      opacity: 1;
+    }
+  }
+
+  &__letterImg {
     padding-left: 170px;
     position: absolute;
     z-index: -2px;
@@ -28,6 +40,23 @@
     flex-direction: column;
     justify-content: space-between;
     height: 160px;
+
+    &__top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__btn {
+      align-items: center;
+      width: 34px;
+      border: 0;
+      border-radius: 8px;
+      padding-right: 28px;
+      z-index: 3;
+      opacity: 0;
+    }
 
     h3 {
       @include text-18;

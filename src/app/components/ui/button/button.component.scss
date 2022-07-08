@@ -24,6 +24,12 @@
     color: $c-text-80;
   }
 
+  &__white {
+    @extend .btn;
+    background: $c-white;
+    padding: 16px;
+  }
+
   &__default {
     @extend .btn;
     color: $c-text-100;

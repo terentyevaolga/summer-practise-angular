@@ -2,9 +2,19 @@
      *ngFor='let item of course$| async'
 >
   <img src='{{item.img}}'
+       class="course__letterImg"
        alt='letter'>
+<!--  <svg-icon src='{{item.img}}' [svgStyle]="{ 'fill':'rgb(248,255,50)' }"></svg-icon>-->
   <div class="course__description">
-    <h3>{{item.title}}</h3>
+    <div class="course__description__top">
+      <h3>{{item.title}}</h3>
+      <app-button
+        theme="WHITE"
+        class="course__description__btn"
+      >
+        <img src="/assets/main-page/arrow.svg" alt="arrow">
+      </app-button>
+    </div>
     <p>{{item.text}}</p>
   </div>
 </div>
