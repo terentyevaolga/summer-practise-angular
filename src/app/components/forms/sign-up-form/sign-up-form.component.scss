@@ -3,6 +3,7 @@
 .form {
   max-width: 468px;
   width: 32vw;
+  max-height: 70vh;
   background-color: $c-light-blue;
   border-radius: 16px;
 
@@ -10,8 +11,12 @@
     margin: 0 auto;
     padding: 28px;
 
+    &__text {
+      margin-bottom: 190px;
+    }
+
     &__btn {
-      margin-bottom: 20px;
+      margin: 12px 0;
     }
 
     p {
@@ -19,5 +24,12 @@
       color: $c-text-40;
       margin: 12px 0;
     }
+
+    h6 {
+      @include text-14;
+      color: $c-text-40;
+      margin: -15px 0 10px 8px;
+    }
   }
 }
+

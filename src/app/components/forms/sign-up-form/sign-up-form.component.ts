@@ -8,7 +8,6 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignUpFormComponent {
-
   form: FormGroup;
   step = 1;
 
@@ -30,9 +29,13 @@ export class SignUpFormComponent {
         course: ['']
       })
     })
+    this.form.valueChanges.subscribe(res=>{
+      console.log(this.form);
+    })
+
   }
 
-  next():void {
+  next() {
     this.step++;
   }
 }

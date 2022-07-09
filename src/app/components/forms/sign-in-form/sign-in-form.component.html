@@ -1,0 +1,28 @@
+<form
+  [formGroup]='form'
+  class='form form__container'
+>
+  <app-form-header title='Войдите в систему'>
+  </app-form-header>
+
+  <app-input
+    placeholder='Логин'
+    formControlName='login'
+  ></app-input>
+
+  <app-password-input
+    placeholder='Пароль'
+    formControlName='password'
+  ></app-password-input>
+
+  <app-button theme="BLUE"
+              type='submit'
+              [wide]=true
+  >Войти
+  </app-button>
+
+  <app-form-footer text="У вас еще нет профиля?"
+                   routerLink="/signup"
+                   action="Зарегистрируйтесь"
+  ></app-form-footer>
+</form>

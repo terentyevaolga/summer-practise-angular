@@ -1,0 +1,14 @@
+@import "mixins";
+
+.form {
+  max-width: 468px;
+  width: 27vw;
+  max-height: 70vh;
+  background-color: $c-light-blue;
+  border-radius: 16px;
+
+  &__container {
+    margin: 0 auto;
+    padding: 28px;
+  }
+}
