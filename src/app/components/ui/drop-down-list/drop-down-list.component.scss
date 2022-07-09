@@ -12,6 +12,7 @@
   padding: 14px 46px 14px 20px;
   border: 1px solid $c-text-40;
   color: $c-text-72;
+  margin-bottom: 20px;
 
   &__wrapper {
     position: relative;
@@ -20,7 +21,7 @@
   &__wrapper::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 35%;
     right: 18px;
     transform: translateY(-50%);
 

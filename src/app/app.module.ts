@@ -18,6 +18,7 @@ import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-
 import { SignUpFormComponent } from './containers/sign-up-form/sign-up-form.component';
 import { FormHeaderComponent } from './components/forms/form-header/form-header.component';
 import { FormFooterComponent } from './components/forms/form-footer/form-footer.component';
+import { PasswordInputComponent } from './components/ui/password-input/password-input.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormFooterComponent } from './components/forms/form-footer/form-footer.
     DropDownListComponent,
     SignUpFormComponent,
     FormHeaderComponent,
-    FormFooterComponent
+    FormFooterComponent,
+    PasswordInputComponent
   ],
   imports: [
     BrowserModule,

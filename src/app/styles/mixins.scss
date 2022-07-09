@@ -7,7 +7,7 @@
 
 @mixin text-44 {
   @include regular-style;
-  font-size: 44px;
+  font-size: 2.75rem;
   line-height: 24px;
   color: $c-text-100;
   font-weight: bold;
@@ -15,7 +15,7 @@
 
 @mixin text-38 {
   @include regular-style;
-  font-size: 38px;
+  font-size: 2.375rem;
   line-height: 24px;
   color: $c-text-100;
   font-weight: bold;
@@ -23,7 +23,7 @@
 
 @mixin text-28 {
   @include regular-style;
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 32px;
   color: $c-text-100;
   font-weight: bold;
@@ -31,14 +31,14 @@
 
 @mixin text-18 {
   @include regular-style;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 22px;
   font-weight: bold;
 }
 
 @mixin text-16 {
   @include regular-style;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 22px;
   color: $c-text-80;
 }
@@ -51,7 +51,7 @@
 
 @mixin text-12 {
   @include regular-style;
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 17px;
   color: $c-text-64
 }

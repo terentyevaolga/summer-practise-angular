@@ -1,22 +1,25 @@
-import {Component, ChangeDetectionStrategy, Input, forwardRef} from '@angular/core';
+import {Component, ChangeDetectionStrategy, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
+  selector: 'app-password-input',
+  templateUrl: './password-input.component.html',
+  styleUrls: ['./password-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
+      useExisting: forwardRef(() => PasswordInputComponent),
       multi: true
     }
   ]
+
 })
-export class InputComponent implements ControlValueAccessor{
-	@Input() type: 'text' | 'password' | 'email' = 'text'
-	@Input() placeholder: string = '';
+export class PasswordInputComponent implements ControlValueAccessor{
+
+  @Input() placeholder: string = '';
+  changeType:boolean = false;
+  visible:boolean = false;
 
   onChangeCallback = (v: string) => {}
   onTouchedCallback = () => {}
@@ -35,6 +38,11 @@ export class InputComponent implements ControlValueAccessor{
   onChange(value: any): void{
     this.onChangeCallback(value.target.value)
     this.onTouchedCallback();
+  }
+
+  viewPassword() {
+    this.visible = !this.visible;
+    this.changeType = !this.changeType;
   }
 
 }

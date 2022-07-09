@@ -24,6 +24,9 @@
       @include text-16;
       margin-top: 25px;
     }
+    span {
+      color: $c-blue;
+    }
   }
   &__courses {
     display: flex;

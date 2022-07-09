@@ -1,9 +1,6 @@
-<div class="input__wrapper">
-  <input
-    [type]='type'
-    [placeholder]='placeholder'
-    class='input'
-  >
-</div>
+<input [type]='type'
+       [placeholder]='placeholder'
+       (change)='onChange($event)'
+>
 
 

@@ -6,7 +6,9 @@
     formGroupName='userDetails'
     *ngIf='step===1'
   >
-    <app-form-header title='Создайте свой профиль' [step]="step"></app-form-header>
+    <app-form-header title='Создайте свой профиль'
+                     [step]="step">
+    </app-form-header>
     <app-input
       placeholder='Имя'
       formControlName='name'
@@ -35,7 +37,9 @@
   <div *ngIf='step===2'
        class='form__container'
   >
-    <app-form-header title='Проверьте почту' [step]="step"></app-form-header>
+    <app-form-header title='Проверьте почту'
+                     [step]="step">
+    </app-form-header>
 
     <p>Чтобы продолжить регистрацию, перейдите по&nbsp;ссылке в&nbsp;письме, мы&nbsp;отправили его на&nbsp;вашу
       почту</p>
@@ -60,7 +64,9 @@
     formGroupName='passwordDetails'
     *ngIf='step===3'
   >
-    <app-form-header title='Придумайте пароль' [step]="step"></app-form-header>
+    <app-form-header title='Придумайте пароль'
+                     [step]="step">
+    </app-form-header>
 
     <app-input
       type='password'
@@ -90,7 +96,9 @@
     formGroupName='chooseCourse'
     *ngIf='step===4'
   >
-    <app-form-header title='Последний этап' [step]="step"></app-form-header>
+    <app-form-header title='Последний этап'
+                     [step]="step">
+    </app-form-header>
 
     <app-drop-down-list
       [items]="['Продуктовый дизайн', 'Лаборатория: IOS-разработка', 'QA. Тестирование для начинающих', 'Frontend-разработка', 'Java-разработка', 'Системная разработка']"
@@ -107,7 +115,6 @@
                 class='form__container__btn'
     >Завершить регистрацию
     </app-button>
-
     <app-form-footer></app-form-footer>
   </form>
 </form>

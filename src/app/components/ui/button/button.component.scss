@@ -16,6 +16,8 @@
     @extend .btn;
     background: $c-blue;
     color: $c-white;
+    // неправильно, но стиль к кастомной кнопке почему то не применяется
+    margin: 15px 0;
   }
 
   &__grey {

@@ -19,16 +19,20 @@ export class SignUpFormComponent {
         email: ['']
       }),
 
-      passwordInfo: this.fb.group({
+      passwordDetails: this.fb.group({
         password: [''],
         repassword: ['']
       }),
 
-      chooseCourses: this.fb.group({
-        faculty: [''],
+      chooseCourse: this.fb.group({
+        direction: [''],
         course: ['']
       })
     })
+    this.form.valueChanges.subscribe(res=>{
+      console.log(this.form);
+    })
+
   }
 
   next() {
