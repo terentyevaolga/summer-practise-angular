@@ -1,20 +1,32 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import {FormControl} from "@angular/forms";
+import {Component, ChangeDetectionStrategy, Input, forwardRef} from '@angular/core';
+import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true
+    }
+  ]
 })
-export class InputComponent{
+export class InputComponent implements ControlValueAccessor{
 	@Input() type: 'text' | 'password' | 'email' = 'text'
 	@Input() placeholder: string = '';
 
 
-  input: FormControl = new FormControl('')
-
-  onChange: any = (value: any) => {
-    this.input.setValue(value);
+  registerOnChange(fn: any): void {
   }
+
+  registerOnTouched(fn: any): void {
+  }
+
+  writeValue(obj: any): void {
+  }
+
+
 }

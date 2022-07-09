@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-signup',
@@ -6,12 +7,35 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./signup.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
 
-  constructor() { }
+  form: FormGroup;
+  step = 1;
 
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      userDetails: this.fb.group({
+        name: [''],
+        surname: [''],
+        email: ['']
+      }),
+
+      passwordDetails: this.fb.group({
+        password: [''],
+        repassword: ['']
+      }),
+
+      chooseCourse: this.fb.group({
+        direction: [''],
+        course: ['']
+      })
+    })
   }
+
+  next():void {
+    this.step++;
+  }
+
 }
 
 // import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';

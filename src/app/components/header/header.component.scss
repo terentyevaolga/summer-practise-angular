@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 1180px;
+    max-width: 80vw;
     margin: 0 auto;
     padding: 31px 0;
   }
@@ -27,6 +27,13 @@
       gap: 4px;
       background: rgba(62, 80, 114, 0.08);
       border-radius: 24px;
+    }
+
+    &__avatar {
+      opacity: 1;
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 }

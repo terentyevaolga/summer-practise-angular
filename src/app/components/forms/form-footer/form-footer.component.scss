@@ -1,0 +1,18 @@
+@import "mixins";
+
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    @include text-14;
+  }
+
+  a {
+    color: $c-blue;
+    text-decoration: underline;
+    margin-left: 2px;
+  }
+}

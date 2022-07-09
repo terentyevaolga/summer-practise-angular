@@ -1,138 +1,125 @@
-<main class='main'>
-  <div class='main__container'>
-    <div class='main__block'>
-      <div>
-        <!--        форма входа-->
-        <div class="signupForm">
-          <div class="signupForm__container">
-            <h4>Создайте свой профиль</h4>
+<div class="main__container">
+  <!--    нужно вынести в отдельный компонент, но пока что не работает-->
+  <form [formGroup]='form'
+        class='form'
+  >
+    <form
+      class='form__container'
+      formGroupName='userDetails'
+      *ngIf='step===1'
+    >
+      <app-form-header title='Создайте свой профиль' [step]="step"></app-form-header>
+      <app-input
+        placeholder='Имя'
+        formControlName='name'
+      ></app-input>
+      <app-input
+        placeholder='Фамилия'
+        formControlName='surname'
+      ></app-input>
+      <app-input
+        type='email'
+        placeholder='Электронная почта'
+        formControlName='email'
+      ></app-input>
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  (submit)="next()"
+                  class='form__container__btn'
+      >Дальше
+      </app-button>
+      <p>Нажимая на&nbsp;кнопку, я&nbsp;соглашаюсь на&nbsp;обработку
+        персональных данных</p>
+      <app-form-footer></app-form-footer>
+    </form>
 
-            <div>
-              <app-input
-                class="signupForm__item"
-                placeholder='Имя'
-              ></app-input>
-              <app-input
-                placeholder='Фамилия'
-              ></app-input>
-              <app-input
-                placeholder='Электронная почта'
-              ></app-input>
+    <div *ngIf='step===2'
+         class='form__container'
+    >
+      <app-form-header title='Проверьте почту' [step]="step"></app-form-header>
 
-              <app-button
-                theme="BLUE"
-                [wide]=true
-              >Дальше
-              </app-button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>Чтобы продолжить регистрацию, перейдите по&nbsp;ссылке в&nbsp;письме, мы&nbsp;отправили его на&nbsp;вашу
+        почту</p>
 
-      <div class='main__block__welcome'>
-        <h1>Добро пожаловать в Агону!</h1>
-        <p>Мы&nbsp;сделали Агону, чтобы учить тому, что хорошо умеем сами&nbsp;&mdash; создавать крутые цифровые
-          продукты</p>
-        <img src="/assets/signUp-page/main.svg" alt="welcome">
-      </div>
+      <p>Если вы&nbsp;не&nbsp;получили письмо, нажмите &laquo;Отправить повторно&raquo; через 00:04 или напишите на&nbsp;нашу
+        почту</p>
+
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  (submit)="next()"
+                  class='form__container__btn'
+      >Дальше
+      </app-button>
+
+      <app-form-footer></app-form-footer>
+
     </div>
-  </div>
-</main>
 
-<!--<main class='main'>-->
-<!--  <div class='main__container'>-->
-<!--    <div class='main__block'>-->
-<!--      <div>-->
-<!--        &lt;!&ndash;        форма входа&ndash;&gt;-->
-<!--        <div class="signupForm">-->
-<!--          <div class="signupForm__container">-->
-<!--            <form [formGroup]="personalDetails">-->
-<!--              <div *ngIf="step == 1">-->
-<!--                <h4>Создайте свой профиль</h4>-->
-<!--                <app-input-->
-<!--                  formControlName='name'-->
-<!--                  placeholder='Имя'-->
-<!--                ></app-input>-->
-<!--                <app-input-->
-<!--                  formControlName='surname'-->
-<!--                  placeholder='Фамилия'-->
-<!--                ></app-input>-->
-<!--                <app-input-->
-<!--                  formControlName='email'-->
-<!--                  placeholder='Электронная почта'-->
-<!--                ></app-input>-->
+    <form
+      class='form__container'
+      formGroupName='passwordDetails'
+      *ngIf='step===3'
+    >
+      <app-form-header title='Придумайте пароль' [step]="step"></app-form-header>
 
+      <app-input
+        type='password'
+        placeholder='Пароль'
+        formControlName='password'
+      ></app-input>
 
-<!--                <app-button-->
-<!--                  theme="BLUE"-->
-<!--                  [wide]=true-->
-<!--                >Дальше-->
-<!--                </app-button>-->
-<!--              </div>-->
-<!--            </form>-->
+      <app-input
+        type='password'
+        placeholder='Повторите пароль'
+        formControlName='repassword'
+      ></app-input>
 
-<!--            <form [formGroup]="emailLetter">-->
-<!--              <div *ngIf="step == 2">-->
-<!--                <h4>Проверьте почту</h4>-->
-<!--                <p>Чтобы продолжить регистрацию, перейдите по ссылке в письме, мы отправили его на вашу почту</p>-->
-<!--                <p>Если вы не получили письмо, нажмите «Отправить повторно» через 00:04 или напишите на нашу почту</p>-->
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  (submit)="next()"
+                  class='form__container__btn'
+      >Дальше
+      </app-button>
 
-<!--                <app-button-->
-<!--                  theme="GREY"-->
-<!--                  [wide]=true-->
-<!--                  (click)="previous()"-->
-<!--                >Вернуться назад-->
-<!--                </app-button>-->
+      <app-form-footer></app-form-footer>
+    </form>
 
-<!--                <app-button-->
-<!--                  theme="BLUE"-->
-<!--                  [wide]=true-->
-<!--                  (click)="next()"-->
-<!--                >Дальше-->
-<!--                </app-button>-->
-<!--              </div>-->
-<!--            </form>-->
+    <form
+      class='form__container'
+      formGroupName='chooseCourse'
+      *ngIf='step===4'
+    >
+      <app-form-header title='Последний этап' [step]="step"></app-form-header>
 
-<!--            <form [formGroup]="passwordDetails">-->
-<!--              <div *ngIf="step == 3">-->
-<!--                <h4>Придумайте пароль</h4>-->
-<!--                <app-input-->
-<!--                  type="password"-->
-<!--                  formControlName='password'-->
-<!--                  placeholder='Пароль'-->
-<!--                ></app-input>-->
-<!--                <app-input-->
-<!--                  type="password"-->
-<!--                  formControlName='repassword'-->
-<!--                  placeholder='Повторите пароль'-->
-<!--                ></app-input>-->
+      <app-drop-down-list
+        [items]="['Продуктовый дизайн', 'Лаборатория: IOS-разработка', 'QA. Тестирование для начинающих', 'Frontend-разработка', 'Java-разработка', 'Системная разработка']"
+      > Выберите направление
+      </app-drop-down-list>
 
-<!--                <app-button-->
-<!--                  theme="GREY"-->
-<!--                  [wide]=true-->
-<!--                  (click)="previous()"-->
-<!--                >Вернуться назад-->
-<!--                </app-button>-->
+      <app-drop-down-list
+        [items]="['1', '2', '3', '4']"
+      > Выберите курс
+      </app-drop-down-list>
 
-<!--                <app-button-->
-<!--                  theme="BLUE"-->
-<!--                  [wide]=true-->
-<!--                  (click)="submit()"-->
-<!--                >Завершить регистрацию-->
-<!--                </app-button>-->
-<!--              </div>-->
-<!--            </form>-->
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  class='form__container__btn'
+      >Завершить регистрацию
+      </app-button>
 
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
+      <app-form-footer></app-form-footer>
+    </form>
+  </form>
 
-<!--      <div class='main__block__welcome'>-->
-<!--        <h1>Добро пожаловать в Агону!</h1>-->
-<!--        <p>Мы&nbsp;сделали Агону, чтобы учить тому, что хорошо умеем сами&nbsp;&mdash; создавать крутые цифровые-->
-<!--          продукты</p>-->
-<!--        <img src="/assets/signUp-page/main.svg" alt="welcome">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</main>-->
+  <section class='main__section'>
+    <h1>Добро пожаловать в&nbsp;<span>Агону!</span></h1>
+    <p>Мы&nbsp;сделали Агону, чтобы учить тому, что хорошо умеем сами&nbsp;&mdash; создавать крутые цифровые
+      продукты</p>
+    <img src="/assets/signUp-page/main.svg" alt="welcome">
+  </section>
+
+</div>

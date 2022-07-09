@@ -2,49 +2,52 @@
 
 .main {
   &__container {
-    max-width: 1180px;
-    margin: 160px auto;
-  }
-
-  &__block {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    max-width: 80vw;
+    margin: 130px auto;
+  }
 
-    &__welcome {
-      max-width: 550px;
+  &__section {
+    max-width: 38vw;
 
-      h1 {
-        @include text-38;
-      }
-      p {
-        @include text-16;
-        margin-top: 28px;
-        margin-bottom: 24px;
-      }
-      img {
-        width: 548px;
-        height: 548px;
-      }
+    img {
+      max-width: 38vw;
+      margin-top: 24px;
+    }
+
+    h1 {
+      @include text-38;
+    }
+
+    p {
+      @include text-16;
+      margin-top: 28px;
+      margin-bottom: 24px;
+    }
+
+    span {
+      color: $c-blue;
     }
   }
 }
 
-.signupForm {
-  width: 468px;
-  height: 518px;
+.form {
+  max-width: 468px;
+  width: 32vw;
+  max-height: 70vh;
   background-color: $c-light-blue;
   border-radius: 16px;
-  padding: 28px;
 
   &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+    margin: 0 auto;
+    padding: 28px;
 
-  &__item {
-    margin-bottom: 30px;
+    p {
+      @include text-14;
+      color: $c-text-40;
+      margin: 12px 0;
+    }
   }
 }
-

@@ -1,0 +1,12 @@
+@import "mixins";
+
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h3 {
+    @include text-18;
+    margin-bottom: 32px;
+  }
+}

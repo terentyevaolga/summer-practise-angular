@@ -13,8 +13,11 @@ import {MainComponent} from "./pages/main/main.component";
 import {InputComponent} from "./components/ui/input/input.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import { MultistepFormComponent } from './containers/multistep-form/multistep-form.component';
-import {HttpClientModule} from "@angular/common/http";
-import {AngularSvgIconModule, SvgLoader} from "angular-svg-icon";
+import {AngularSvgIconModule} from "angular-svg-icon";
+import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-list.component';
+import { SignUpFormComponent } from './containers/sign-up-form/sign-up-form.component';
+import { FormHeaderComponent } from './components/forms/form-header/form-header.component';
+import { FormFooterComponent } from './components/forms/form-footer/form-footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,11 @@ import {AngularSvgIconModule, SvgLoader} from "angular-svg-icon";
     MainComponent,
     SignupComponent,
     CourseCardComponent,
-    MultistepFormComponent
+    MultistepFormComponent,
+    DropDownListComponent,
+    SignUpFormComponent,
+    FormHeaderComponent,
+    FormFooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+@import "mixins";
+
+.dropDownList {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+  background: $c-white;
+  padding: 14px 46px 14px 20px;
+  border: 1px solid $c-text-40;
+  color: $c-text-72;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+
+    display: block;
+    pointer-events: none;
+
+    // код отрисовывающий треугольник
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 6px 0 6px;
+    border-color: $c-text-72 transparent transparent transparent;
+  }
+}
+
+option {
+  border-radius: 24px;
+  color: rgba(0, 11, 38, 0.72);
+  padding: 10px 20px;
+  border: none;
+}

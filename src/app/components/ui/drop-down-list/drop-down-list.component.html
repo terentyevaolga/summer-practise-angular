@@ -1,0 +1,10 @@
+<div class='dropDownList__wrapper'>
+  <select class='dropDownList'>
+    <option hidden>
+      <ng-content></ng-content>
+    </option>
+    <ng-container *ngFor='let item of items'>
+      <option>{{item}}</option>
+    </ng-container>
+  </select>
+</div>
