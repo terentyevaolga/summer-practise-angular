@@ -38,6 +38,13 @@
     padding: 0;
   }
 
+  &__transparent {
+    @extend .btn;
+    border: 1px solid $c-blue;
+    color: $c-blue;
+    padding: 12px 24px;
+  }
+
   &__wide {
     width: 100%
   }

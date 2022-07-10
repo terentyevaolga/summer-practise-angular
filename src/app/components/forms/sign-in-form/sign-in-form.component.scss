@@ -11,4 +11,10 @@
     margin: 0 auto;
     padding: 28px;
   }
+
+  &__error {
+    color: red;
+    margin-top: -30px;
+    white-space: pre-line;
+  }
 }

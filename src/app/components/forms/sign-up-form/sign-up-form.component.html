@@ -11,20 +11,49 @@
       placeholder='Имя'
       formControlName='name'
     ></app-input>
+    <ng-container *ngIf="hasError('name', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('name', 'pattern')">
+      <app-form-error-message text='Недопустимый формат'></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('name', 'minlength')">
+      <app-form-error-message text='Имя слишком короткое'></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('name', 'maxlength')">
+      <app-form-error-message text='Имя слишком длинное'></app-form-error-message>
+    </ng-container>
     <app-input
       placeholder='Фамилия'
       formControlName='surname'
     ></app-input>
+    <ng-container *ngIf="hasError('surname', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('surname', 'pattern')">
+      <app-form-error-message text='Недопустимый формат'></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('surname', 'minlength')">
+      <app-form-error-message text='Фамилия слишком короткая'></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('surname', 'maxlength')">
+      <app-form-error-message text='Фамилия слишком длинная'></app-form-error-message>
+    </ng-container>
     <app-input
       type='email'
       placeholder='Электронная почта'
       formControlName='email'
     ></app-input>
+    <ng-container *ngIf="hasError('email', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('email', 'pattern')">
+      <app-form-error-message text='Недопустимый формат почты'></app-form-error-message>
+    </ng-container>
     <app-button theme="BLUE"
                 type='submit'
                 [wide]=true
                 (submit)="next()"
-                class='form__container__btn'
     >Дальше
     </app-button>
     <p>Нажимая на&nbsp;кнопку, я&nbsp;соглашаюсь на&nbsp;обработку
@@ -68,11 +97,25 @@
       formControlName='password'
     ></app-password-input>
     <h6>Придумайте пароль, в котором содержится от 8 символов</h6>
+    <ng-container *ngIf="hasError('password', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('password', 'pattern')">
+      <app-form-error-message text='Неправильный логин'></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('password', 'maxlength')">
+      <app-form-error-message text='Пароль слишком длинный'></app-form-error-message>
+    </ng-container>
 
     <app-password-input
       placeholder='Повторите пароль'
       formControlName='repassword'
     ></app-password-input>
+    <ng-container *ngIf="hasError('repassword', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+<!--    тут еще должна быть проверка на совпадение паролей-->
+
 
     <app-button theme="BLUE"
                 type='submit'

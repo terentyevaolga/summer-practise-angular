@@ -1,0 +1,18 @@
+@import "mixins";
+
+.upload {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: $c-white;
+  border: 1px dashed $c-text-16;
+  padding: 24px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  p {
+    @include text-14;
+    width: 20vw;
+    color: $c-text-72;
+  }
+}

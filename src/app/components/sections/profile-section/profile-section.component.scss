@@ -1,0 +1,31 @@
+@import "mixins";
+
+.section {
+  background-color: $c-light-blue;
+  border-radius: 16px;
+  margin-top: 32px;
+  width: 80vw;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 48px 100px;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      max-width: 280px;
+
+      h4 {
+        @include text-18;
+      }
+      p {
+        @include text-14;
+      }
+    }
+    &__fields {
+      width: 40vw;
+    }
+  }
+}

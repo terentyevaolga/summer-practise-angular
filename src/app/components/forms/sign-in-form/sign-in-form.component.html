@@ -9,11 +9,29 @@
     placeholder='Логин'
     formControlName='login'
   ></app-input>
+  <ng-container *ngIf="hasError('login', 'required')">
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf="hasError('login', 'pattern')">
+    <app-form-error-message text='Неправильный логин'></app-form-error-message>
+  </ng-container>
 
   <app-password-input
     placeholder='Пароль'
     formControlName='password'
   ></app-password-input>
+  <ng-container *ngIf="hasError('password', 'required')">
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf="hasError('password', 'pattern')">
+    <app-form-error-message text='Неправильный логин'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf="hasError('password', 'minlength')">
+    <app-form-error-message text='Длина пароля от 8 символов'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf="hasError('password', 'maxlength')">
+    <app-form-error-message text='Пароль слишком длинный'></app-form-error-message>
+  </ng-container>
 
   <app-button theme="BLUE"
               type='submit'

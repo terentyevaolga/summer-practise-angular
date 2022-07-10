@@ -7,6 +7,10 @@ input {
   border: 1px solid $c-text-16;
   padding: 20px 0 20px 16px;
   outline: none;
+
+  &:focus {
+    border: 1px solid $c-blue;
+  }
 }
 
 

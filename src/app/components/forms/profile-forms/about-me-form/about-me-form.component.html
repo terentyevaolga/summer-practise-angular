@@ -1,0 +1,40 @@
+<form [formGroup]='form'>
+  <app-input
+    placeholder='Имя'
+    formControlName='name'
+  ></app-input>
+
+  <app-input
+    placeholder='Фамилия'
+    formControlName='surname'
+  ></app-input>
+
+  <app-input
+    placeholder='Дата рождения'
+    formControlName='birthDate'
+  ></app-input>
+
+  <app-input
+    placeholder='Номер телефона'
+    formControlName='phone'
+  ></app-input>
+
+  <app-input
+    placeholder='Никнейм в телеграме'
+    formControlName='nickname'
+  ></app-input>
+
+  <app-input
+    placeholder='Город'
+    formControlName='city'
+  ></app-input>
+
+
+  <app-button
+    theme='GREY'
+    type='submit'
+  >
+    Сохранить
+  </app-button>
+</form>
+

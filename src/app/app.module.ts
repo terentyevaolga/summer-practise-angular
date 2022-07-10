@@ -20,6 +20,15 @@ import { PasswordInputComponent } from './components/ui/password-input/password-
 import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
 import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-form.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { FormErrorMessageComponent } from './components/ui/form-error-message/form-error-message.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileSectionComponent } from './components/sections/profile-section/profile-section.component';
+import { AboutMeFormComponent } from './components/forms/profile-forms/about-me-form/about-me-form.component';
+import { StudyDataFormComponent } from './components/forms/profile-forms/study-data-form/study-data-form.component';
+import { CvFormComponent } from './components/forms/profile-forms/cv-form/cv-form.component';
+import { ChangePasswordComponent } from './components/forms/profile-forms/change-password/change-password.component';
+import { ProfileSectionsListComponent } from './containers/profile-sections-list/profile-sections-list.component';
+import { TextareaComponent } from './components/ui/textarea/textarea.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +46,16 @@ import { SigninComponent } from './pages/signin/signin.component';
     PasswordInputComponent,
     SignInFormComponent,
     SignUpFormComponent,
-    SigninComponent
+    SigninComponent,
+    FormErrorMessageComponent,
+    ProfileComponent,
+    ProfileSectionComponent,
+    AboutMeFormComponent,
+    StudyDataFormComponent,
+    CvFormComponent,
+    ChangePasswordComponent,
+    ProfileSectionsListComponent,
+    TextareaComponent
   ],
   imports: [
     BrowserModule,

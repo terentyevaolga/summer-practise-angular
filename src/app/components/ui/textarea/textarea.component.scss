@@ -1,11 +1,7 @@
 @import "mixins";
 
-:host {
-  position: relative;
-}
-
-input {
-  width: 96%;
+textarea {
+  width: 96.5%;
   margin-bottom: 20px;
   border-radius: 8px;
   border: 1px solid $c-text-16;
@@ -15,10 +11,4 @@ input {
   &:focus {
     border: 1px solid $c-blue;
   }
-}
-
-span {
-  position: absolute;
-  right: 10px;
-  top: 0;
 }

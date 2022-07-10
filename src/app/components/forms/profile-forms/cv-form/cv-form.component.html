@@ -1,0 +1,31 @@
+<form [formGroup]='form'>
+
+  <div class="upload">
+    <p>Нажмите &laquo;Загрузить&raquo; или перетащите
+      сюда pdf, png, jpeg не&nbsp;более 3&nbsp;Мб</p>
+    <app-button
+      type='submit'
+      theme='TRANSPARENT'
+    >
+      Загрузить CV
+    </app-button>
+  </div>
+
+  <app-drop-down-list>
+    Список технологий
+  </app-drop-down-list>
+
+  <!--  с textarea пока что почему то не работает-->
+
+  <app-input
+    placeholder='Описание опыта'
+    formControlName='course'
+  ></app-input>
+
+  <app-button
+    theme='GREY'
+    type='submit'
+  >
+    Сохранить
+  </app-button>
+</form>

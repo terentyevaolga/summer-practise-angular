@@ -14,7 +14,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
     }
   ]
 })
-export class InputComponent implements ControlValueAccessor{
+export class InputComponent implements ControlValueAccessor {
 	@Input() type: 'text' | 'password' | 'email' = 'text'
 	@Input() placeholder: string = '';
 

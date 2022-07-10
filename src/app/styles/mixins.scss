@@ -47,6 +47,7 @@
   @include regular-style;
   font-size: 14px;
   line-height: 20px;
+  color: $c-text-40;
 }
 
 @mixin text-12 {
