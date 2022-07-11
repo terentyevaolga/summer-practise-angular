@@ -11,6 +11,7 @@
   line-height: 24px;
   color: $c-text-100;
   font-weight: bold;
+  @include adaptive-font(44, 34)
 }
 
 @mixin text-38 {
@@ -19,6 +20,7 @@
   line-height: 24px;
   color: $c-text-100;
   font-weight: bold;
+  @include adaptive-font(38, 28)
 }
 
 @mixin text-28 {
@@ -45,15 +47,27 @@
 
 @mixin text-14 {
   @include regular-style;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 20px;
-  color: $c-text-40;
 }
 
 @mixin text-12 {
   @include regular-style;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 17px;
   color: $c-text-64
 }
 
+$maxWidth: 1180;
+
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+
+  @media (max-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+  }
+}

@@ -1,9 +1,29 @@
 <div class="profile">
-  <img src="/assets/header/profile.svg" alt="avatar">
+  <img src="/assets/img/profile.svg" alt="avatar">
   <div class="profile__text">
     <h3><span>Рустем</span> Агонауллин</h3>
     <p>agonaboytechnokratos@gmail.com</p>
   </div>
 </div>
 
-<app-profile-sections-list></app-profile-sections-list>
+<section>
+  <app-profile-section title='О себе'>
+    <app-about-me-form></app-about-me-form>
+  </app-profile-section>
+
+  <app-profile-section title='Данные об учете'>
+    <app-study-data-form></app-study-data-form>
+  </app-profile-section>
+
+  <app-profile-section title='CV'
+                       warning='Загрузите файл CV или заполните поля в ручную или и то и другое'
+  >
+    <app-cv-form></app-cv-form>
+  </app-profile-section>
+
+  <app-profile-section title='Изменение пароля'
+                       warning=''
+  >
+    <app-change-password></app-change-password>
+  </app-profile-section>
+</section>

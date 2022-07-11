@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {CoursesService} from "../../services/courses.service";
 
 @Component({
@@ -7,14 +7,11 @@ import {CoursesService} from "../../services/courses.service";
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
   courses$ = this.coursesService.courses$;
 
   constructor(
     private coursesService: CoursesService
   ) { }
-
-  ngOnInit(): void {
-  }
 
 }

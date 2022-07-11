@@ -2,9 +2,7 @@
   [formGroup]='form'
   class='form form__container'
 >
-  <app-form-header title='Войдите в систему'>
-  </app-form-header>
-
+  <h3>Войдите в систему</h3>
   <app-input
     placeholder='Логин'
     formControlName='login'
@@ -12,30 +10,27 @@
   <ng-container *ngIf="hasError('login', 'required')">
     <app-form-error-message></app-form-error-message>
   </ng-container>
-  <ng-container *ngIf="hasError('login', 'pattern')">
+  <ng-container *ngIf="hasError('login', 'email')">
     <app-form-error-message text='Неправильный логин'></app-form-error-message>
   </ng-container>
 
-  <app-password-input
+  <app-input
+    type="password"
+    [password]=true
     placeholder='Пароль'
     formControlName='password'
-  ></app-password-input>
+  ></app-input>
   <ng-container *ngIf="hasError('password', 'required')">
     <app-form-error-message></app-form-error-message>
   </ng-container>
-  <ng-container *ngIf="hasError('password', 'pattern')">
-    <app-form-error-message text='Неправильный логин'></app-form-error-message>
-  </ng-container>
   <ng-container *ngIf="hasError('password', 'minlength')">
     <app-form-error-message text='Длина пароля от 8 символов'></app-form-error-message>
-  </ng-container>
-  <ng-container *ngIf="hasError('password', 'maxlength')">
-    <app-form-error-message text='Пароль слишком длинный'></app-form-error-message>
   </ng-container>
 
   <app-button theme="BLUE"
               type='submit'
               [wide]=true
+              [disabled]=form.invalid
   >Войти
   </app-button>
 
@@ -44,3 +39,4 @@
                    action="Зарегистрируйтесь"
   ></app-form-footer>
 </form>
+

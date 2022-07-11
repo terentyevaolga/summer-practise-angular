@@ -13,25 +13,31 @@
       margin-top: -90px;
     }
   }
+
   &__welcome {
     margin-top: 100px;
     margin-bottom: 100px;
     max-width: 30vw;
+
     h1 {
       @include text-44;
     }
+
     p {
       @include text-16;
       margin-top: 25px;
     }
+
     span {
       color: $c-blue;
     }
   }
+
   &__courses {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 40px;
 
     h3 {
       @include text-28;
@@ -43,7 +49,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: flex-start;
+      flex-wrap: wrap;
     }
   }
 

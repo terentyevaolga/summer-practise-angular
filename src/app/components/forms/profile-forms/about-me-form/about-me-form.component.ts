@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-about-me-form',
@@ -13,8 +13,8 @@ export class AboutMeFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      name: [''],
-      surname: [''],
+      name: ['', [Validators.required]],
+      surname: ['', [Validators.required]],
       birthDate: [''],
       phone: [''],
       nickname: [''],

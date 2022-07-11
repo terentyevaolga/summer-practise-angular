@@ -1,6 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {EmailValidator, NameValidators, PasswordValidators} from "../../../utils/validations.utils";
+import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-sign-up-form',
@@ -15,19 +14,19 @@ export class SignUpFormComponent {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       userDetails: this.fb.group({
-        name: ['', [...NameValidators]],
-        surname: ['', [...NameValidators]],
-        email: ['', [...EmailValidator]]
+        name: ['', [Validators.required, Validators.min(3)]],
+        surname: ['', [Validators.required, Validators.min(3)]],
+        email: ['', [Validators.required, Validators.email]],
       }),
 
       passwordDetails: this.fb.group({
-        password: ['', [...PasswordValidators]],
-        repassword: ['', [...PasswordValidators]]
+        password: ['', [Validators.required, Validators.min(8)]],
+        repassword: ['', [Validators.required]],
       }),
 
       chooseCourse: this.fb.group({
-        direction: [''],
-        course: ['']
+        direction: ['', Validators.required],
+        course: ['', Validators.required]
       })
     })
     this.form.valueChanges.subscribe(res=>{
@@ -36,15 +35,16 @@ export class SignUpFormComponent {
 
   }
 
+
   next() {
     this.step++;
   }
 
-  control(name: string) {
-    return this.form.get(name);
+  control(group: string, control: string) {
+    return this.form.get(group)?.get(control);
   }
 
-  hasError(formControlName: string, errorName: string) {
-    return this.control(formControlName)?.touched && this.control(formControlName)?.dirty && this.control(formControlName)?.hasError(errorName)
+  hasError(formGroupName:string, formControlName: string, errorName: string) {
+    return this.control(formGroupName, formControlName)?.touched && this.control(formGroupName, formControlName)?.dirty && this.control(formGroupName, formControlName)?.hasError(errorName)
   }
 }

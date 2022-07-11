@@ -1,7 +1,22 @@
-<input [type]='type'
-       [placeholder]='placeholder'
-       (change)='onChange($event)'
-       autofocus
->
+<div class='input__container'>
+  <input [type]="changeType ? 'text': type"
+         (change)='onChange($event)'
+  >
 
+  <label [class]="value && 'filled'">{{placeholder}}</label>
 
+  <ng-container *ngIf='password'>
+    <app-button (submit)='toggle()'
+                theme='DEFAULT'
+                class='button'
+    >
+      <ng-container *ngIf='show; else hide'>
+        <app-icon name='show'></app-icon>
+      </ng-container>
+    </app-button>
+
+    <ng-template #hide>
+      <app-icon name='hide'></app-icon>
+    </ng-template>
+  </ng-container>
+</div>

@@ -17,4 +17,9 @@
     margin-top: -30px;
     white-space: pre-line;
   }
+
+  h3 {
+    @include text-18;
+    margin-bottom: 32px;
+  }
 }

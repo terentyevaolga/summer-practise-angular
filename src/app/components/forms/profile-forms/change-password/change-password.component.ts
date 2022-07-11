@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-change-password',
@@ -13,9 +13,9 @@ export class ChangePasswordComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      currentPassword: [''],
-      newPassword: [''],
-      repassword: [''],
+      currentPassword: ['', [Validators.required]],
+      newPassword: ['', [Validators.required]],
+      repassword: ['', [Validators.required]],
     });
     this.form.markAllAsTouched();
   }

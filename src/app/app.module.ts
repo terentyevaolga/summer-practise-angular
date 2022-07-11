@@ -16,7 +16,6 @@ import {AngularSvgIconModule} from "angular-svg-icon";
 import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-list.component';
 import { FormHeaderComponent } from './components/forms/form-header/form-header.component';
 import { FormFooterComponent } from './components/forms/form-footer/form-footer.component';
-import { PasswordInputComponent } from './components/ui/password-input/password-input.component';
 import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
 import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-form.component';
 import { SigninComponent } from './pages/signin/signin.component';
@@ -27,8 +26,8 @@ import { AboutMeFormComponent } from './components/forms/profile-forms/about-me-
 import { StudyDataFormComponent } from './components/forms/profile-forms/study-data-form/study-data-form.component';
 import { CvFormComponent } from './components/forms/profile-forms/cv-form/cv-form.component';
 import { ChangePasswordComponent } from './components/forms/profile-forms/change-password/change-password.component';
-import { ProfileSectionsListComponent } from './containers/profile-sections-list/profile-sections-list.component';
 import { TextareaComponent } from './components/ui/textarea/textarea.component';
+import { IconComponent } from './components/ui/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,6 @@ import { TextareaComponent } from './components/ui/textarea/textarea.component';
     DropDownListComponent,
     FormHeaderComponent,
     FormFooterComponent,
-    PasswordInputComponent,
     SignInFormComponent,
     SignUpFormComponent,
     SigninComponent,
@@ -54,8 +52,8 @@ import { TextareaComponent } from './components/ui/textarea/textarea.component';
     StudyDataFormComponent,
     CvFormComponent,
     ChangePasswordComponent,
-    ProfileSectionsListComponent,
-    TextareaComponent
+    TextareaComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
