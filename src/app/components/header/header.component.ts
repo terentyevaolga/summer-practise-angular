@@ -11,14 +11,14 @@ import {DialogService} from "../../services/dialog.service";
 export class HeaderComponent {
   constructor(private dialog: DialogService) {
   }
-
-  focus() {
-    this.dialog.openDialog(DropDownMenuComponent)
-  }
-
-  // focus(): void {
-  //   this.dialog.openDialog(DropDownMenuComponent, {
-  //     backdropClass: 'backdrop'
-  //   })
+  //
+  // focus() {
+  //   this.dialog.openDialog(DropDownMenuComponent)
   // }
+
+  focus(): void {
+    this.dialog.openDialog(DropDownMenuComponent, {
+      backdropClass: 'backdrop'
+    })
+  }
 }

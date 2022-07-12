@@ -26,7 +26,8 @@ export class DialogCloseDirective {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const proxiedChange = changes['_tkDialogClose'] || changes['_tkDialogCloseResult'];
+    // @ts-ignore
+    const proxiedChange = changes._tkDialogClose || changes._tkDialogCloseResult;
 
     if (proxiedChange) {
       this.dialogResult = proxiedChange.currentValue;

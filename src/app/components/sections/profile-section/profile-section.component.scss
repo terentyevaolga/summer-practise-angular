@@ -19,9 +19,11 @@
 
       h4 {
         @include text-18;
+        font-family: "Neue Machina", serif;
       }
       p {
         @include text-14;
+        color: $c-text-64;
       }
     }
     &__fields {
