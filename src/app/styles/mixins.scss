@@ -5,29 +5,33 @@
   font-weight: 400;
 }
 
-@mixin text-44 {
-  @include regular-style;
-  font-size: 2.75rem;
-  line-height: 24px;
-  color: $c-text-100;
-  font-weight: bold;
-  @include adaptive-font(44, 34)
-}
+//@mixin text-44 {
+//  @include regular-style;
+//  font-size: 2.75rem;
+//  line-height: 24px;
+//  font-weight: bold;
+//  @include adaptive-font(44, 34)
+//}
 
 @mixin text-38 {
   @include regular-style;
   font-size: 2.375rem;
   line-height: 24px;
-  color: $c-text-100;
   font-weight: bold;
   @include adaptive-font(38, 28)
 }
 
-@mixin text-28 {
+//@mixin text-28 {
+//  @include regular-style;
+//  font-size: 1.75rem;
+//  line-height: 32px;
+//  font-weight: bold;
+//}
+
+@mixin text-24 {
   @include regular-style;
-  font-size: 1.75rem;
-  line-height: 32px;
-  color: $c-text-100;
+  font-size: 1.5rem;
+  line-height: 29px;
   font-weight: bold;
 }
 
@@ -42,7 +46,6 @@
   @include regular-style;
   font-size: 1rem;
   line-height: 22px;
-  color: $c-text-80;
 }
 
 @mixin text-14 {
@@ -58,6 +61,32 @@
   color: $c-text-64
 }
 
+@mixin h1 {
+  font-family: 'Neue Machina', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 48px;
+}
+
+@mixin h2 {
+  font-family: 'Neue Machina', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 24px;
+  color: black;
+}
+
+@mixin h3 {
+  font-family: 'Neue Machina', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+  color: black;
+}
+
 $maxWidth: 1180;
 
 @mixin adaptive-font($pcSize, $mobSize) {
@@ -69,5 +98,11 @@ $maxWidth: 1180;
   }
   @media (min-width: 767px) {
     font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+  }
+}
+
+@mixin laptop1150 {
+  @media(max-width: 1150px) {
+    @content
   }
 }

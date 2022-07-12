@@ -1,5 +1,7 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Step} from "../../../models/step";
+
 
 @Component({
   selector: 'app-sign-up-form',
@@ -9,7 +11,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class SignUpFormComponent {
   form: FormGroup;
-  step = 1;
+  step: Step = Step.UserDetails;
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -35,7 +37,6 @@ export class SignUpFormComponent {
 
   }
 
-
   next() {
     this.step++;
   }
@@ -44,7 +45,11 @@ export class SignUpFormComponent {
     return this.form.get(group)?.get(control);
   }
 
-  hasError(formGroupName:string, formControlName: string, errorName: string) {
-    return this.control(formGroupName, formControlName)?.touched && this.control(formGroupName, formControlName)?.dirty && this.control(formGroupName, formControlName)?.hasError(errorName)
+  getGroup(name: string): FormGroup {
+    return this.form.get(name) as FormGroup
+  }
+
+  hasError(formGroup: string, formControlName: string, errorName: string) {
+    return (this.control(formGroup, formControlName)?.touched || this.control(formGroup, formControlName)?.dirty) && this.control(formGroup, formControlName)?.hasError(errorName)
   }
 }

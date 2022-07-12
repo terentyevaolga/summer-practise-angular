@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {CourseModel, MockCourse} from '../mocks/course-mock';
+import {MockCourse} from '../mocks/course-mock';
+import {CourseModel} from "../models/course";
 
 
 @Injectable({

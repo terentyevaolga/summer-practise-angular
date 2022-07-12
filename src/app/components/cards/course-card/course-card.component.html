@@ -1,20 +1,27 @@
-<div class='course' >
-  <img src='{{img}}'
-       alt='background image'
-       class='course__img'>
-
+<div class='course'
+     (mouseenter)='this.showButton=true'
+     (mouseleave)='this.showButton=false'
+>
+  <app-icon name='{{img}}'
+            size='122 144'
+            class='course__img'
+  ></app-icon>
   <div class='course__info'>
     <div class='course__info__top'>
-      <h3>{{title}}</h3>
+      <span><h4>{{title}}</h4></span>
+      <ng-container *ngIf='showButton'>
+        <app-button
+          theme="WHITE"
+        >
+          <app-icon name='arrow'
+                    class='course__info__top__btn'
+          ></app-icon>
+        </app-button>
 
-<!--      <app-button-->
-<!--        theme='WHITE'-->
-<!--        class='course__info__btn'-->
-<!--      >-->
-<!--        <app-icon name='arrow' size='24px'></app-icon>-->
-<!--      </app-button>-->
+      </ng-container>
     </div>
   </div>
-  <p>{{text}}</p>
+  <p class='course__text'>{{text}}</p>
 </div>
+
 

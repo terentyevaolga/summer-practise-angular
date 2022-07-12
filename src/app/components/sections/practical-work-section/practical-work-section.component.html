@@ -1,0 +1,36 @@
+<div class="practicalWork__btn">
+  <app-button theme="GREY"
+              routerLink="/courses"
+  >
+    <app-icon name='darkArrow'
+              size='24px'
+    ></app-icon>
+  </app-button>
+  <p>Назад</p>
+</div>
+
+<div *ngIf='practicalWork'
+     class="practicalWork"
+>
+  <h2>Задача</h2>
+
+  <h4>Общая информация:</h4>
+  <ul>
+    <li>какая цель выполнения этого задания,</li>
+    <li>что именно нужно сделать,</li>
+    <li>сколько максимально баллов за задание можно получить,</li>
+    <li>какие сроки сдаичи,</li>
+    <li>как сдавать на проверку и как она будет проходить,</li>
+  </ul>
+
+  <h4>Технические требования</h4>
+  <ul>
+    <li>для каких версий систем, ОС, браузеров</li>
+    <li>какие инструменты можно/нужно/нельзя использоать</li>
+  </ul>
+
+  <h4>Рекомендации к выполнению</h4>
+
+  <p>{{practicalWork.recommendations}}</p>
+
+</div>

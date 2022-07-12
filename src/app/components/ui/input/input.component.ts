@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy, Input, forwardRef, Output} from '@angular/core';
+import {Component, ChangeDetectionStrategy, Input, forwardRef} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({

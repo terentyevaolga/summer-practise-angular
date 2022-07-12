@@ -28,6 +28,13 @@ import { CvFormComponent } from './components/forms/profile-forms/cv-form/cv-for
 import { ChangePasswordComponent } from './components/forms/profile-forms/change-password/change-password.component';
 import { TextareaComponent } from './components/ui/textarea/textarea.component';
 import { IconComponent } from './components/ui/icon/icon.component';
+import { ModalContainerComponent } from './components/modals/modal-container/modal-container.component';
+import {DialogModule} from "@angular/cdk-experimental/dialog";
+import { DropDownMenuComponent } from './components/modals/drop-down-menu/drop-down-menu.component';
+import {DialogCloseDirective} from "./directives/dialog-close.directive";
+import { CoursesComponent } from './pages/courses/courses.component';
+import { PracticalWorkCardComponent } from './components/cards/practical-work-card/practical-work-card.component';
+import { PracticalWorkSectionComponent } from './components/sections/practical-work-section/practical-work-section.component';
 
 @NgModule({
   declarations: [
@@ -53,13 +60,20 @@ import { IconComponent } from './components/ui/icon/icon.component';
     CvFormComponent,
     ChangePasswordComponent,
     TextareaComponent,
-    IconComponent
+    IconComponent,
+    ModalContainerComponent,
+    DropDownMenuComponent,
+    DialogCloseDirective,
+    CoursesComponent,
+    PracticalWorkCardComponent,
+    PracticalWorkSectionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     AngularSvgIconModule,
+    DialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,29 @@
 @import "mixins"
+@import '~@angular/cdk/overlay-prebuilt.css'
+
+.backdrop
+  background: transparent
 
 body
   margin: 0
   padding: 0
-  background: $c-white
+  background: white
   color: $c-text-100
   font-family: Inter, sans-serif
 
-code
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+button
+  padding: 0
+  margin: 0
 
 h1, h3, h5, h6, p, h2
   margin: 0 0
 
 a
   text-decoration: none
+
+
+@font-face
+  font-family: "Neue Machina"
+  src: url("/assets/fonts/NeueMachina-Ultrabold.otf") format("opentype")
+  font-style: normal
+  font-weight: normal

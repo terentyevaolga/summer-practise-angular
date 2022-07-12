@@ -6,8 +6,6 @@
   border-radius: 8px;
   width: 320px;
   height: 176px;
-  //width: 22vw;
-  //min-height: 22vh;
   z-index: 2;
   position: relative;
   padding: 28px;
@@ -15,7 +13,16 @@
 
   &:hover {
     background-color: $c-blue;
-    color: $c-white;
+    color: white;
+
+    .course__text {
+      color: white;
+    }
+
+    .course__img {
+      stroke: white;
+      fill: none;
+    }
   }
 
   p {
@@ -29,6 +36,8 @@
     position: absolute;
     right: 28px;
     top: 28px;
+    fill: none;
+    stroke: $c-blue;
   }
 
   &__info {
@@ -38,10 +47,20 @@
     &__top {
       display: flex;
       justify-content: space-between;
-    }
+      align-items: center;
 
-    &__btn {
-      display: block;
+      &__btn {
+        z-index: 2;
+        padding: 2px 2px 0 2px;
+      }
+
+      span {
+        width: 13vw;
+      }
+
+      h4 {
+        font-family: "Neue Machina", serif;
+      }
     }
   }
 }

@@ -2,7 +2,8 @@
 
 .main {
   &__container {
-    max-width: 80vw;
+    max-width: 1180px;
+    width: 80vw;
     margin: 0 auto;
     position: relative;
 
@@ -18,13 +19,17 @@
     margin-top: 100px;
     margin-bottom: 100px;
     max-width: 30vw;
+    @include laptop1150 {
+
+    }
 
     h1 {
-      @include text-44;
+     @include h1;
     }
 
     p {
       @include text-16;
+      color: $c-text-64;
       margin-top: 25px;
     }
 
@@ -40,7 +45,7 @@
     margin-bottom: 40px;
 
     h3 {
-      @include text-28;
+      @include h3;
     }
 
     &__list {

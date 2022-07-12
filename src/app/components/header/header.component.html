@@ -1,7 +1,8 @@
 <header>
 	<div class='header__container'>
 		<a routerLink='/'
-		><img src='../../../assets/img/logo.svg'
+		><img src='/assets/img/logo.svg'
+          class='header__container__logo'
 		      alt='logo'>
 		</a>
 
@@ -20,15 +21,17 @@
 			<app-button
         theme="DEFAULT"
       >
-				<img src='../../../assets/svg/bell.svg'
-				     alt='bell'>
+        <img src='/assets/svg/bell.svg'
+             alt='bell'>
 			</app-button>
 
 			<app-button
+        type="submit"
         theme="DEFAULT"
+        (submit)='focus()'
         class="header__nav__avatar"
       >
-				<img src='../../../assets/img/profile.svg'
+				<img src='/assets/img/profile.svg'
 				     alt='profile'>
 			</app-button>
 		</nav>

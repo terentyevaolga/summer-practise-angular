@@ -1,0 +1,33 @@
+@import "mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.practicalWork {
+  max-width: 50vw;
+
+  h2 {
+    @include text-24;
+    margin-top: 24px;
+  }
+
+  h4 {
+    @include text-16;
+    font-weight: bold;
+  }
+
+  p, li {
+    @include text-16;
+    color: $c-text-64;
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -230px;
+  }
+
+}

@@ -1,0 +1,11 @@
+@import "mixins";
+
+:host {
+  max-width: 1180px;
+  width: 80vw;
+  margin: 30px auto;
+}
+
+.outlet {
+  margin-top: -40px;
+}

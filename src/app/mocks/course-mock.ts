@@ -1,39 +1,34 @@
-export interface CourseModel {
-  title: string,
-  text: string,
-  img: string
-}
+import {CourseModel} from "../models/course";
 
 export const MockCourse: Array<CourseModel> = [
   {
     title: 'Продуктовый дизайнер',
     text: 'Объясним, как попасть на позицию дизайнер-стажёра, и куда развиваться дальше.',
-    img: '/assets/svg/smallA.svg'
+    img: 'smallA'
   },
   {
     title: 'Лаборатория: IOS-разработка',
     text: 'Вы научитесь работать с техническими требованиями и главное — получите менторскую поддержку',
-    img: '/assets/svg/smallG.svg'
+    img: 'smallG'
   },
   {
     title: 'QA.Тестирование для начинающих',
     text: 'Дадим необходимый набор инструментов для начинающего тестировщика, оптимальное сочетание теории и практики.',
-    img: '/assets/svg/smallO.svg'
+    img: 'smallO'
   },
   {
     title: 'Frontend-разработка',
     text: 'Познакомим с основами и быстро перейдём к практике: напишем проект на Javascript, React или Angular.',
-    img: '/assets/svg/smallN.svg'
+    img: 'smallN'
   },
   {
     title: 'Java - разработка',
     text: 'Java в рекламе не нуждается. А у нас вы поймёте, как применять его в решении промышленных задач.',
-    img: '/assets/svg/smallA.svg'
+    img: 'smallA'
   },
   {
     title: 'Системная аналитика',
     text: 'Расскажем на курсе. Это хорошая база для старта в аналитике.',
-    img: '/assets/svg/smallG.svg'
-  },
-
+    img: 'smallG'
+  }
 ]

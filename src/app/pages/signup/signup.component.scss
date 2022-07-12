@@ -5,7 +5,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 80vw;
+    max-width: 1180px;
+    width: 80vw;
     margin: 130px auto;
   }
 
@@ -17,8 +18,8 @@
       margin-top: 24px;
     }
 
-    h1 {
-      @include text-38;
+    h2 {
+      @include h2;
     }
 
     p {

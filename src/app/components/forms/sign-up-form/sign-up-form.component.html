@@ -3,7 +3,7 @@
 >
   <form
     class='form__container'
-    formGroupName='userDetails'
+    [formGroup]='getGroup("userDetails")'
     *ngIf='step===1'
   >
     <app-form-header title='Создайте свой профиль' [step]="step"></app-form-header>
@@ -14,14 +14,8 @@
     <ng-container *ngIf="hasError('userDetails', 'name', 'required')">
       <app-form-error-message></app-form-error-message>
     </ng-container>
-    <ng-container *ngIf="hasError('userDetails','name', 'pattern')">
-      <app-form-error-message text='Недопустимый формат'></app-form-error-message>
-    </ng-container>
     <ng-container *ngIf="hasError('userDetails','name', 'minlength')">
       <app-form-error-message text='Имя слишком короткое'></app-form-error-message>
-    </ng-container>
-    <ng-container *ngIf="hasError('userDetails','name', 'maxlength')">
-      <app-form-error-message text='Имя слишком длинное'></app-form-error-message>
     </ng-container>
     <app-input
       placeholder='Фамилия'
@@ -30,15 +24,10 @@
     <ng-container *ngIf="hasError('userDetails','surname', 'required')">
       <app-form-error-message></app-form-error-message>
     </ng-container>
-    <ng-container *ngIf="hasError('userDetails','surname', 'pattern')">
-      <app-form-error-message text='Недопустимый формат'></app-form-error-message>
-    </ng-container>
     <ng-container *ngIf="hasError('userDetails','surname', 'minlength')">
       <app-form-error-message text='Фамилия слишком короткая'></app-form-error-message>
     </ng-container>
-    <ng-container *ngIf="hasError('userDetails','surname', 'maxlength')">
-      <app-form-error-message text='Фамилия слишком длинная'></app-form-error-message>
-    </ng-container>
+
     <app-input
       type='email'
       placeholder='Электронная почта'
@@ -87,7 +76,7 @@
 
   <form
     class='form__container'
-    formGroupName='passwordDetails'
+    [formGroup]='getGroup("passwordDetails")'
     *ngIf='step===3'
   >
     <app-form-header title='Придумайте пароль' [step]="step"></app-form-header>
@@ -123,7 +112,7 @@
 
   <form
     class='form__container'
-    formGroupName='chooseCourse'
+    [formGroup]='getGroup("chooseCourse")'
     *ngIf='step===4'
   >
     <app-form-header title='Последний этап' [step]="step"></app-form-header>
