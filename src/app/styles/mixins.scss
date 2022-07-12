@@ -5,29 +5,6 @@
   font-weight: 400;
 }
 
-//@mixin text-44 {
-//  @include regular-style;
-//  font-size: 2.75rem;
-//  line-height: 24px;
-//  font-weight: bold;
-//  @include adaptive-font(44, 34)
-//}
-
-@mixin text-38 {
-  @include regular-style;
-  font-size: 2.375rem;
-  line-height: 24px;
-  font-weight: bold;
-  @include adaptive-font(38, 28)
-}
-
-//@mixin text-28 {
-//  @include regular-style;
-//  font-size: 1.75rem;
-//  line-height: 32px;
-//  font-weight: bold;
-//}
-
 @mixin text-24 {
   @include regular-style;
   font-size: 1.5rem;
@@ -65,7 +42,7 @@
   font-family: 'Neue Machina', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 44px;
+  font-size: 2.75rem;
   line-height: 48px;
 }
 
@@ -73,7 +50,7 @@
   font-family: 'Neue Machina', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 2rem;
   line-height: 24px;
   color: black;
 }
@@ -82,7 +59,7 @@
   font-family: 'Neue Machina', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 24px;
   color: black;
 }
