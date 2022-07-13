@@ -1,18 +1,11 @@
 @import "mixins";
 
-a {
-  color: $c-text-100;
-}
-
 .title {
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-
-  &:hover {
-    color: $c-blue;
-  }
+  margin-left: 200px;
 
   h3 {
     @include h3;
@@ -21,4 +14,8 @@ a {
   h3:first-child {
     margin-right: 10px;
   }
+}
+
+a {
+  color: $c-text-100;
 }

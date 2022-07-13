@@ -8,8 +8,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 })
 export class ButtonComponent {
 	@Input() type: 'submit' | 'button' | 'reset' = 'button';
-	@Input() theme: 'BLUE' | 'GREY' | 'DEFAULT' | 'WHITE' | 'TRANSPARENT' = 'BLUE';
-	// @Input() color?: string
+	@Input() theme: 'BLUE' | 'GREY' | 'DEFAULT' | 'WHITE' | 'TRANSPARENT' | 'LIGHTGREY' = 'BLUE';
 	@Input() wide: boolean = false;
 	@Input() disabled: boolean = false;
 	@Output() submit = new EventEmitter();

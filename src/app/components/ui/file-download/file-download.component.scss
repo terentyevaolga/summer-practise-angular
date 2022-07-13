@@ -1,0 +1,23 @@
+@import "mixins";
+
+a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid $c-text-16;
+  border-bottom: 1px solid $c-text-16;
+  @include text-14;
+  color: $c-text-80;
+}
+
+.file_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  p {
+    color: $c-text-40;
+    margin-right: 10px;
+  }
+}

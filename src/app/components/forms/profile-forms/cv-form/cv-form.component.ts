@@ -12,9 +12,8 @@ export class CvFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      university: ['', Validators.required],
-      course: ['', Validators.required],
-      group: ['', Validators.required],
+      experience: ['', Validators.required],
+      portfolio: ['', Validators.required]
     });
     this.form.markAllAsTouched();
   }

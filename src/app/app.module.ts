@@ -36,6 +36,8 @@ import { PracticalWorkSectionComponent } from './components/sections/practical-w
 import { SidebarPanelComponent } from './components/sidebar-panel/sidebar-panel.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { MenuComponent } from './components/modals/menu/menu.component';
+import { LayoutContainerComponent } from './components/containers/layout-container/layout-container.component';
+import { FileDownloadComponent } from './components/ui/file-download/file-download.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { MenuComponent } from './components/modals/menu/menu.component';
     PracticalWorkCardComponent,
     PracticalWorkSectionComponent,
     SidebarPanelComponent,
-    MenuComponent
+    MenuComponent,
+    LayoutContainerComponent,
+    FileDownloadComponent
   ],
   imports: [
     BrowserModule,

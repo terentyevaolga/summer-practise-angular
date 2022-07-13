@@ -1,9 +1,10 @@
-<div class="practicalWork__btn">
-  <app-button theme="GREY"
+<div class="practicalWork__back">
+  <app-button theme="LIGHTGREY"
               routerLink="/courses"
   >
     <app-icon name='darkArrow'
-              size='24px'
+              width='24px'
+              height='24px'
     ></app-icon>
   </app-button>
   <p>Назад</p>
@@ -12,9 +13,9 @@
 <div *ngIf='practicalWork'
      class="practicalWork"
 >
-  <h2>Задача</h2>
+  <h4>Задача</h4>
 
-  <h4>Общая информация:</h4>
+  <h5>Общая информация:</h5>
   <ul>
     <li>какая цель выполнения этого задания,</li>
     <li>что именно нужно сделать,</li>
@@ -23,14 +24,22 @@
     <li>как сдавать на проверку и как она будет проходить,</li>
   </ul>
 
-  <h4>Технические требования</h4>
+  <h5>Технические требования</h5>
   <ul>
     <li>для каких версий систем, ОС, браузеров</li>
     <li>какие инструменты можно/нужно/нельзя использоать</li>
   </ul>
 
-  <h4>Рекомендации к выполнению</h4>
-
+  <h5>Рекомендации к выполнению</h5>
   <p>{{practicalWork.recommendations}}</p>
+
+  <h4>Материалы</h4>
+
+  <div class="practicalWork__files">
+    <app-file-download file='/assets/files/techTask.docx'
+    ></app-file-download>
+  </div>
+
+  <app-button>Скачать все</app-button>
 
 </div>

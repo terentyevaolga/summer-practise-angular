@@ -8,7 +8,9 @@ import {Component, ChangeDetectionStrategy, Input} from '@angular/core';
 })
 export class IconComponent {
   @Input() name: string = '';
-  @Input() size: string = '24px';
+  @Input() width: string = '';
+  @Input() height: string = '';
+
 
   getPath(): string {
     const name = this.name;

@@ -15,18 +15,15 @@
     Список технологий
   </app-drop-down-list>
 
-  <!--  с textarea пока что почему то не работает-->
+  <app-textarea placeholder='Описание опыта'
+                formControlName='experience'></app-textarea>
 
-  <app-input
-    placeholder='Описание опыта'
-    formControlName='course'
-  ></app-input>
+  <app-textarea placeholder='Ссылки на проекты (портфолио)'
+                formControlName='portfolio'></app-textarea>
 
-  <app-button
-    theme='GREY'
-    type='submit'
-    [disabled]=form.invalid
-  >
-    Сохранить
-  </app-button>
+
+  <app-button theme='GREY'
+              type='submit'
+              [disabled]=form.invalid
+  >Сохранить</app-button>
 </form>

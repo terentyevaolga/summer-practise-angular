@@ -1,6 +1,10 @@
 @import 'mixins';
 
 :host {
+  display: block;
+}
+
+main {
   max-width: 1180px;
   width: 80vw;
   margin: 130px auto 50px auto;

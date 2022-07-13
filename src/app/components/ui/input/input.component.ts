@@ -19,12 +19,10 @@ export class InputComponent implements ControlValueAccessor {
   @Input() type: 'text' | 'password' | 'email' | 'file' = 'text'
   @Input() placeholder: string = '';
   value: string = '';
-  show:boolean = false;
-  changeType:boolean = false;
+  visible:boolean = false;
 
   toggle(): void {
-    this.show = !this.show;
-    this.changeType = !this.changeType
+    this.visible = !this.visible;
   }
 
   onChangeCallback = (v: string) => {}

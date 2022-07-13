@@ -6,7 +6,6 @@
   justify-content: center;
   border-radius: 8px;
   @include text-14;
-  padding: 16px 0;
   opacity: 1;
 
   border: none;
@@ -17,8 +16,7 @@
     @extend .btn;
     background: $c-blue;
     color: white;
-    // неправильно, но стиль к кастомной кнопке почему то не применяется
-    margin: 15px 0;
+    padding: 16px 22px;
   }
 
   &__grey {
@@ -28,10 +26,16 @@
     padding: 16px 24px
   }
 
+  &__lightGrey {
+    @extend .btn;
+    background: $c-text-8;
+    padding: 10px;
+  }
+
   &__white {
     @extend .btn;
     background: white;
-    padding: 10px;
+    padding: 5px 8px;
   }
 
   &__default {

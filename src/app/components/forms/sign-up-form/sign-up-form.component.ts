@@ -1,7 +1,5 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Step} from "../../../models/step";
-
 
 @Component({
   selector: 'app-sign-up-form',
@@ -11,7 +9,7 @@ import {Step} from "../../../models/step";
 })
 export class SignUpFormComponent {
   form: FormGroup;
-  step: Step = Step.UserDetails;
+  step = 1;
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({

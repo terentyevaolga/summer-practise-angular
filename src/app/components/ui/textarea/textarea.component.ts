@@ -1,14 +1,22 @@
-import {Component, ChangeDetectionStrategy, Input} from '@angular/core';
-import {ControlValueAccessor} from "@angular/forms";
+import {Component, ChangeDetectionStrategy, Input, forwardRef} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'app-textarea',
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TextareaComponent),
+      multi: true
+    }
+  ]
 })
 export class TextareaComponent implements ControlValueAccessor{
   @Input() placeholder: string = '';
+  value: string = '';
 
   onChangeCallback = (v: string) => {}
   onTouchedCallback = () => {}
@@ -25,6 +33,7 @@ export class TextareaComponent implements ControlValueAccessor{
   }
 
   onChange(value: any): void{
+    this.value = value.target.value
     this.onChangeCallback(value.target.value)
     this.onTouchedCallback();
   }

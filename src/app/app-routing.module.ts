@@ -9,10 +9,6 @@ import {
   PracticalWorkSectionComponent
 } from "./components/sections/practical-work-section/practical-work-section.component";
 
-const coursesRoutes: Routes = [
-  {path: ':id', component: PracticalWorkSectionComponent}
-]
-
 const routes: Routes = [
 	{
 		path: '',
@@ -33,7 +29,12 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent,
-    children: coursesRoutes
+    children: [
+      {
+        path: ':id',
+        component: PracticalWorkSectionComponent
+      }
+    ]
   }
 ];
 

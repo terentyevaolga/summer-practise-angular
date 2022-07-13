@@ -1,14 +1,22 @@
 @import "mixins";
 
 textarea {
-  width: 96.5%;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  width: 96%;
+  @include text-14;
+  padding: 20px 0 60px 16px;
   border: 1px solid $c-text-16;
-  padding: 20px 0 20px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
   outline: none;
+  resize: vertical;
 
   &:focus {
     border: 1px solid $c-blue;
   }
 }
+
+::-webkit-input-placeholder {
+  font-family: Inter, sans-serif;
+  color: rgba($c-text-100, 0.72);
+}
+

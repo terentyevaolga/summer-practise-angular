@@ -1,39 +1,41 @@
 <form
   [formGroup]='form'
-  class='form form__container'
+  class='form'
 >
   <h5>Войдите в систему</h5>
-  <app-input
-    placeholder='Логин'
-    formControlName='login'
-  ></app-input>
-  <ng-container *ngIf="hasError('login', 'required')">
-    <app-form-error-message></app-form-error-message>
-  </ng-container>
-  <ng-container *ngIf="hasError('login', 'email')">
-    <app-form-error-message text='Неправильный логин'></app-form-error-message>
-  </ng-container>
+  <section>
+    <app-input
+      placeholder='Логин'
+      formControlName='login'
+    ></app-input>
+    <ng-container *ngIf="hasError('login', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('login', 'email')">
+      <app-form-error-message text='Неправильный логин'></app-form-error-message>
+    </ng-container>
 
-  <app-input
-    type="password"
-    [password]=true
-    placeholder='Пароль'
-    formControlName='password'
-  ></app-input>
-  <ng-container *ngIf="hasError('password', 'required')">
-    <app-form-error-message></app-form-error-message>
-  </ng-container>
-  <ng-container *ngIf="hasError('password', 'minlength')">
-    <app-form-error-message text='Длина пароля от 8 символов'></app-form-error-message>
-  </ng-container>
+    <app-input
+      [password]=true
+      placeholder='Пароль'
+      formControlName='password'
+    ></app-input>
+    <ng-container *ngIf="hasError('password', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('password', 'minlength')">
+      <app-form-error-message text='Длина пароля от 8 символов'></app-form-error-message>
+    </ng-container>
 
-  <app-button theme="BLUE"
-              type='submit'
-              [wide]=true
-              [disabled]=form.invalid
-  >Войти
-  </app-button>
+    <app-button theme="BLUE"
+                type='submit'
+                [wide]=true
+                [disabled]=form.invalid
+                class="form__btn"
+    >Войти
+    </app-button>
 
+  </section>
   <app-form-footer text="У вас еще нет профиля?"
                    routerLink="/signup"
                    action="Зарегистрируйтесь"

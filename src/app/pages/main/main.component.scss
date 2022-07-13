@@ -1,25 +1,29 @@
 @import "mixins";
 
-.main {
-  &__container {
-    max-width: 1180px;
-    width: 80vw;
-    margin: 0 auto;
-    position: relative;
+:host {
+  display: block;
+}
 
-    img {
-      position: absolute;
-      right: -70px;
-      z-index: -3;
-      margin-top: -90px;
+main {
+  max-width: 1180px;
+  width: 80vw;
+  margin: 0 auto;
+  position: relative;
+}
 
-      @include tablet720 {
-        display: none;
-      }
-    }
+img {
+  position: absolute;
+  right: -70px;
+  z-index: -3;
+  margin-top: -90px;
+
+  @include tablet720 {
+    display: none;
   }
+}
 
-  &__welcome {
+.block {
+  &__description {
     margin-top: 100px;
     margin-bottom: 100px;
     max-width: 480px;
@@ -34,7 +38,6 @@
     @include phone460 {
       width: 80vw;
     }
-
     h1 {
       @include h1;
     }
@@ -72,7 +75,6 @@
       }
     }
   }
-
   span {
     color: $c-blue;
   }

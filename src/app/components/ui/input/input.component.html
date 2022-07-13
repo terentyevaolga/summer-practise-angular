@@ -1,5 +1,5 @@
 <div class='container'>
-  <input [type]="changeType ? 'text': type"
+  <input [type]="this.password ? (visible ? 'text' : 'password') : type"
          (change)='onChange($event)'
   >
 
@@ -10,13 +10,19 @@
                 theme='DEFAULT'
                 class='button'
     >
-      <ng-container *ngIf='show; else hide'>
-        <app-icon name='show'></app-icon>
+      <ng-container *ngIf='visible; else hide'>
+        <app-icon name='show'
+                  width='24px'
+                  height='24px'
+        ></app-icon>
       </ng-container>
     </app-button>
-
-    <ng-template #hide>
-      <app-icon name='hide'></app-icon>
-    </ng-template>
   </ng-container>
 </div>
+
+<ng-template #hide>
+  <app-icon name='hide'
+            width='24px'
+            height='24px'
+  ></app-icon>
+</ng-template>

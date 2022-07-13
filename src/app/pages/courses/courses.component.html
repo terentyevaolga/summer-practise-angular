@@ -1,8 +1,13 @@
-<div *ngFor='let item of practicalWork$ | async'>
-  <app-practical-work-card
-    [practicalWork]='item'
-  ></app-practical-work-card>
-  <div class="outlet">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<app-layout-container>
+  <main>
+    <div *ngFor='let item of practicalWork$ | async'>
+      <app-practical-work-card
+        [practicalWork]='item'
+      ></app-practical-work-card>
+      <div class="outlet">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+</app-layout-container>
+
