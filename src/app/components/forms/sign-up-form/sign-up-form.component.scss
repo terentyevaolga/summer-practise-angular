@@ -1,11 +1,15 @@
-@import "mixins";
+@import "../../../styles/mixins";
 
 .form {
   max-width: 468px;
   width: 32vw;
-  max-height: 70vh;
+  height: 518px;
   background-color: $c-light-blue;
   border-radius: 16px;
+
+  @include tablet920 {
+    width: 70vw;
+  }
 
   &__container {
     margin: 0 auto;
@@ -17,6 +21,12 @@
 
     &__btn {
       margin: 12px 0;
+    }
+
+    &__error {
+      color: red;
+      margin-top: -30px;
+      white-space: pre-line;
     }
 
     p {

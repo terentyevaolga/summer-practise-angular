@@ -10,20 +10,33 @@
     width: 80vw;
     margin: 60px auto;
 
+    @include tablet720 {
+      flex-direction: column;
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      column-gap: 28px;
+
+      @include tablet720 {
+        margin-top: 10px;
+      }
+      @include phone460 {
+        flex-direction: column;
+        row-gap: 3px;
+      }
+
+      &__link {
+        @include text-12;
+        text-decoration: underline;
+      }
+    }
+
     p {
       @include text-12
-    }
-  }
-  &__nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    column-gap: 28px;
-
-    &__link {
-      @include text-12;
-      text-decoration: underline;
     }
   }
 }

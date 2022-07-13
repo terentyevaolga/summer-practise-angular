@@ -28,12 +28,20 @@
 			<app-button
         type="submit"
         theme="DEFAULT"
-        (submit)='focus()'
+        (mouseover)='focus()'
         class="header__nav__avatar"
       >
 				<img src='/assets/img/profile.svg'
 				     alt='profile'>
 			</app-button>
+
+      <app-button
+        theme="DEFAULT"
+        class="header__nav__menu"
+        (click)='openSidebarPanel()'
+      >
+        <img src="/assets/svg/burger-menu.svg" alt="menu">
+      </app-button>
 		</nav>
 	</div>
 </header>

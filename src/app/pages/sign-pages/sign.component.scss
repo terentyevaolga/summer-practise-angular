@@ -1,0 +1,56 @@
+@import 'mixins';
+
+:host {
+  max-width: 1180px;
+  width: 80vw;
+  margin: 130px auto 50px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include tablet920 {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+  }
+}
+
+.section {
+  max-width: 548px;
+  width: 38vw;
+
+  @include tablet920 {
+    width: 70vw;
+    margin-bottom: 50px;
+  }
+
+  img {
+    max-width: 548px;
+    width: 38vw;
+    margin-top: 24px;
+
+    @include tablet920 {
+      display: none;
+    }
+  }
+
+  h2 {
+    @include h2;
+
+    @include laptop1150 {
+      @include text-24;
+    }
+
+    span {
+      color: $c-blue;
+    }
+  }
+
+  p {
+    @include text-16;
+    color: $c-text-64;
+    margin-top: 24px;
+  }
+}
+

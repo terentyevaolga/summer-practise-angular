@@ -1,18 +1,17 @@
 @import "mixins";
 
 :host {
-  padding: 20px;
+  padding: 48px;
   background: white;
   outline: none;
   max-height: 100vh;
   overflow: auto;
-  //TODO исправить
-  max-width: 240px;
-  width: 240px;
-  position: absolute;
-  top: 76px;
-  right: 136px;
-  box-shadow: 0 4px 24px $c-text-12;
-  border-radius: 8px;
+  border-radius: 26px;
+  max-width: 480px;
 
+  ::ng-deep {
+    & > * {
+      display: block;
+    }
+  }
 }

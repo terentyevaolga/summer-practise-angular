@@ -1,33 +1,39 @@
 @import "mixins";
 
-.section {
+:host {
+  display: flex;
+  max-width: 1180px;
+  width: 82vw;
   background-color: $c-light-blue;
   border-radius: 16px;
-  margin-top: 32px;
-  width: 80vw;
+  margin-top: 32px
+}
 
-  &__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 48px 100px;
+.section {
+  display: flex;
+  justify-content: space-between;
+  max-width: 980px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 48px 0;
 
-    &__text {
-      display: flex;
-      flex-direction: column;
-      max-width: 280px;
+  &__info {
+    max-width: 280px;
+    width: 30%;
 
-      h4 {
-        @include text-18;
-        font-family: "Neue Machina", serif;
-      }
-      p {
-        @include text-14;
-        color: $c-text-64;
-      }
+    h4 {
+      @include text-18;
+      font-family: "Neue Machina", serif;
     }
-    &__fields {
-      width: 40vw;
+
+    p {
+      @include text-14;
+      color: $c-text-64;
     }
+  }
+
+  &__content {
+    max-width: 580px;
+    width: 60%;
   }
 }

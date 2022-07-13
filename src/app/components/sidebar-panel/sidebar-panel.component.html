@@ -1,0 +1,41 @@
+<div class="sidebar">
+
+  <div class='sidebar__header'>
+    <h4>Меню</h4>
+    <app-button
+      theme="DEFAULT"
+      [appDialogClose]
+    >
+      <app-icon name="close"></app-icon>
+    </app-button>
+  </div>
+
+  <app-button
+    theme='DEFAULT'
+    class='sidebar__profile'
+    (click)='openProfile()'
+    [appDialogClose]
+  >
+    <img src='/assets/img/profile.svg'
+         alt='avatar'>
+    <h3>Рустем Агонауллин</h3>
+  </app-button>
+
+  <nav class='sidebar__nav'>
+    <a routerLink='/'
+       [appDialogClose]
+    >Главная</a>
+    <a routerLink='/courses'
+       [appDialogClose]
+    >Мои курсы</a>
+
+    <app-button
+      theme="GREY"
+      class='sidebar__nav__btn'
+      [appDialogClose]
+    >
+      Выход
+    </app-button>
+  </nav>
+
+</div>

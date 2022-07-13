@@ -12,24 +12,35 @@
       right: -70px;
       z-index: -3;
       margin-top: -90px;
+
+      @include tablet720 {
+        display: none;
+      }
     }
   }
 
   &__welcome {
     margin-top: 100px;
     margin-bottom: 100px;
-    max-width: 30vw;
+    max-width: 480px;
+    width: 35vw;
     @include laptop1150 {
-
+      width: 80vw;
+    }
+    @include tablet720 {
+      width: 60vw;
+      margin-top: 50px;
+    }
+    @include phone460 {
+      width: 80vw;
     }
 
     h1 {
-     @include h1;
+      @include h1;
     }
 
     p {
-      @include text-16;
-      color: $c-text-64;
+      @include p;
       margin-top: 25px;
     }
 
@@ -55,6 +66,10 @@
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
+
+      @include tablet840 {
+        justify-content: center;
+      }
     }
   }
 

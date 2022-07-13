@@ -1,12 +1,10 @@
 <div class="section">
-  <div class="section__container">
-    <div class="section__container__text">
-      <h4>{{title}}</h4>
-      <p>{{warning}}</p>
-    </div>
+  <div class="section__info">
+    <h4>{{title}}</h4>
+    <p>{{warning}}</p>
+  </div>
 
-    <div class="section__container__fields">
-      <ng-content></ng-content>
-    </div>
+  <div class="section__content">
+    <ng-content></ng-content>
   </div>
 </div>

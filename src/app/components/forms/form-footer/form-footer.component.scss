@@ -6,11 +6,16 @@
   justify-content: center;
   align-items: center;
 
+  @include laptop1150 {
+    flex-direction: column;
+  }
+
   p {
     @include text-14;
   }
 
   a {
+    @include text-14;
     color: $c-blue;
     text-decoration: underline;
     margin-left: 2px;

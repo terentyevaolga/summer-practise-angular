@@ -11,6 +11,14 @@
   padding: 28px;
   margin-bottom: 24px;
 
+  @include laptop1150 {
+    width: 280px;
+  }
+
+  @include phone460 {
+    width: 70vw;
+  }
+
   &:hover {
     background-color: $c-blue;
     color: white;
@@ -56,6 +64,9 @@
 
       span {
         width: 13vw;
+        @include phone460 {
+          width: 80vw;
+        }
       }
 
       h4 {

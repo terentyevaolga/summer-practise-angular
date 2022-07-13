@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import {DropDownMenuComponent} from "../modals/drop-down-menu/drop-down-menu.component";
 import {DialogService} from "../../services/dialog.service";
+import {SidebarPanelComponent} from "../sidebar-panel/sidebar-panel.component";
+import {MenuComponent} from "../modals/menu/menu.component";
 
 @Component({
   selector: 'app-header',
@@ -11,14 +12,14 @@ import {DialogService} from "../../services/dialog.service";
 export class HeaderComponent {
   constructor(private dialog: DialogService) {
   }
-  //
-  // focus() {
-  //   this.dialog.openDialog(DropDownMenuComponent)
-  // }
 
-  focus(): void {
-    this.dialog.openDialog(DropDownMenuComponent, {
+  focus() {
+    this.dialog.openDialog(MenuComponent, {
       backdropClass: 'backdrop'
     })
+  }
+
+  openSidebarPanel() {
+    this.dialog.openDialog(SidebarPanelComponent);
   }
 }
