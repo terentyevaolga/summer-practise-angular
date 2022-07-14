@@ -33,7 +33,7 @@ import {DialogCloseDirective} from "./directives/dialog-close.directive";
 import { CoursesComponent } from './pages/courses/courses.component';
 import { PracticalWorkCardComponent } from './components/cards/practical-work-card/practical-work-card.component';
 import { PracticalWorkSectionComponent } from './components/sections/practical-work-section/practical-work-section.component';
-import { SidebarPanelComponent } from './components/sidebar-panel/sidebar-panel.component';
+import { SidebarPanelComponent } from './components/modals/sidebar-panel/sidebar-panel.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { MenuComponent } from './components/modals/menu/menu.component';
 import { LayoutContainerComponent } from './components/containers/layout-container/layout-container.component';

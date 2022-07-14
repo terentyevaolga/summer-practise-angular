@@ -3,12 +3,12 @@
 :host {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   background: white;
   outline: none;
   max-height: 100vh;
   overflow: auto;
   width: 200px;
+  padding: 12px 0;
   position: absolute;
   top: 90px;
   right: 170px;
@@ -18,8 +18,12 @@
   a {
     @include text-14;
     color: $c-text-72;
-    margin-bottom: 16px;
     outline: none;
+    padding: 8px 20px;
+
+    &:hover {
+      background: $c-light-blue;
+    }
 
     &:last-child {
       margin: 0;
