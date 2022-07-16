@@ -11,6 +11,19 @@ export class SignUpFormComponent {
   form: FormGroup;
   step = 1;
 
+  directions: Array<string> = [
+    'Продуктовый дизайн',
+    'Лаборатория: IOS-разработка',
+    'QA. Тестирование для начинающих',
+    'Frontend-разработка',
+    'Java-разработка',
+    'Системная аналитика'
+  ]
+
+  courses: Array<string> = [
+    '1', '2', '3', '4'
+  ]
+
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       userDetails: this.fb.group({
@@ -32,11 +45,14 @@ export class SignUpFormComponent {
     this.form.valueChanges.subscribe(res=>{
       console.log(this.form);
     })
-
   }
 
   next() {
     this.step++;
+  }
+
+  save() {
+    console.log(this.form.value)
   }
 
   control(group: string, control: string) {

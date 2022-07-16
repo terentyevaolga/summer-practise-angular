@@ -13,19 +13,14 @@
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
+  @include partialFlex(column);
+  @include width(400px, 100%);
   row-gap: 20px;
-  max-width: 400px;
-  width: 100%;
   margin: 0 auto;
 
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 384px;
-    width: 70%;
+    @include flex(row, space-between, center);
+    @include width(384px, 70%);
     margin: 0 auto;
 
     h4 {
@@ -41,8 +36,7 @@
   }
 
   &__nav {
-    display: flex;
-    flex-direction: column;
+    @include partialFlex(column);
     margin-top: 20px;
 
     a {

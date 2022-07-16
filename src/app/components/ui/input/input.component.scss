@@ -1,9 +1,8 @@
 @import "mixins";
 
 .container {
+  @include partialFlex(column);
   position: relative;
-  display: flex;
-  flex-direction: column;
 
   .filled {
     transform: translate(0, 8px) scale(0.9)
@@ -24,7 +23,7 @@
     left: 16px;
 
     @include text-14;
-    color: $c-text-72;
+    color: $c-text-40;
   }
 
   input {

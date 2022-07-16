@@ -22,4 +22,8 @@ export class AboutMeFormComponent {
     });
     this.form.markAllAsTouched();
   }
+
+  saveAboutMe() {
+    console.log(this.form.value)
+  }
 }

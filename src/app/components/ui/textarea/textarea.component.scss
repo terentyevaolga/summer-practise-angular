@@ -9,6 +9,7 @@ textarea {
   margin-bottom: 20px;
   outline: none;
   resize: vertical;
+  font-family: Inter, sans-serif;
 
   &:focus {
     border: 1px solid $c-blue;
@@ -17,6 +18,6 @@ textarea {
 
 ::-webkit-input-placeholder {
   font-family: Inter, sans-serif;
-  color: rgba($c-text-100, 0.72);
+  color: rgba($c-text-100, 0.4);
 }
 

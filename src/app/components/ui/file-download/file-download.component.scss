@@ -1,9 +1,7 @@
 @import "mixins";
 
 a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between, center);
   padding: 12px 0;
   border-top: 1px solid $c-text-16;
   border-bottom: 1px solid $c-text-16;
@@ -12,9 +10,7 @@ a {
 }
 
 .file_info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flex(row, flex-start, center);
 
   p {
     color: $c-text-40;

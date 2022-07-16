@@ -8,5 +8,6 @@ import {Component, ChangeDetectionStrategy, Input} from '@angular/core';
 })
 export class FileDownloadComponent {
   @Input() file: string = '';
+  @Input() fileName: string = '';
 
 }

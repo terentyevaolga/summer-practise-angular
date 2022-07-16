@@ -9,10 +9,9 @@
     formControlName='surname'
   ></app-input>
 
-  <app-input
-    placeholder='Дата рождения'
-    formControlName='birthDate'
-  ></app-input>
+  <app-input-date
+    formControlName='birthDate'>
+  </app-input-date>
 
   <app-input
     placeholder='Номер телефона'
@@ -34,6 +33,7 @@
     theme='GREY'
     type='submit'
     [disabled]=form.invalid
+    (submit)='saveAboutMe()'
   >
     Сохранить
   </app-button>

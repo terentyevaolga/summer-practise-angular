@@ -1,0 +1,38 @@
+<div class='upload__wrapper'
+     (dragover)='onDrag($event)'>
+  <input type='file'
+         #fileUpload
+         (change)='onChange($event)'
+         accept='application/pdf, image/png, image/jpeg'
+  >
+
+  <div class='upload'>
+    <p>Нажмите &laquo;Загрузить&raquo; или перетащите сюда pdf, png, jpeg не&nbsp;более 3&nbsp;Мб</p>
+
+    <app-button theme='TRANSPARENT'
+                (submit)='fileUpload.click()'
+                [disabled]='!!this.file'
+    >
+      Загрузить CV
+    </app-button >
+  </div>
+</div>
+
+<div *ngIf='file'
+     class='file__wrapper'>
+  <div class='file'>
+    <h6>{{file.name}}</h6>
+    <p>{{toMb()}} мб</p>
+  </div>
+
+  <app-button theme='DEFAULT'
+              (submit)='close()'
+  >
+    <app-icon name='close'
+              width='20px'
+              height='20px'></app-icon>
+  </app-button>
+</div>
+
+
+

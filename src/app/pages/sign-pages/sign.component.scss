@@ -5,24 +5,18 @@
 }
 
 main {
-  max-width: 1180px;
-  width: 80vw;
-  margin: 130px auto 50px auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  @include flex(row, space-between, flex-start);
+  margin-top: 164px;
 
   @include tablet920 {
-    flex-direction: column-reverse;
-    align-items: center;
+    @include flex(column-reverse, center, center);
     text-align: center;
     margin-top: 70px;
   }
 }
 
 .section {
-  max-width: 548px;
-  width: 38vw;
+  @include width(548px, 38vw);
 
   @include tablet920 {
     width: 70vw;
@@ -30,8 +24,7 @@ main {
   }
 
   img {
-    max-width: 548px;
-    width: 38vw;
+    @include width(548px, 38vw);
     margin-top: 24px;
 
     @include tablet920 {

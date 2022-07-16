@@ -1,10 +1,14 @@
-<div class='dropDownList__wrapper'>
-  <select class='dropDownList'>
-    <option hidden>
-      <ng-content></ng-content>
-    </option>
-    <ng-container *ngFor='let item of items'>
-      <option>{{item}}</option>
-    </ng-container>
-  </select>
-</div>
+<select (change)='onChange($event)'
+        required>
+  <option disabled
+          selected
+  >{{placeholder}}</option>
+  <option *ngFor='let item of options'
+  >{{item}}</option>
+</select>
+
+<app-icon name='dropdown'
+          class='dropdown'
+          width='15px'
+          height='15px'
+></app-icon>

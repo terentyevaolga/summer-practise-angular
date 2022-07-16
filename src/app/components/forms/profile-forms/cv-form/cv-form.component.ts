@@ -13,9 +13,13 @@ export class CvFormComponent {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       experience: ['', Validators.required],
+      cvDownload: [''],
       portfolio: ['', Validators.required]
     });
     this.form.markAllAsTouched();
   }
 
+  saveCV() {
+    console.log(this.form.value)
+  }
 }

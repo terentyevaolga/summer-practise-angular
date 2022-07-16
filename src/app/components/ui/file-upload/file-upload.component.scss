@@ -1,0 +1,45 @@
+@import "mixins";
+
+.upload {
+  @include flex(row, space-between, center);
+
+  p {
+    @include text-14;
+    color: $c-text-40;
+    max-width: 20vw;
+  }
+
+  &__wrapper {
+    width: 92%;
+    border: 1px dashed $c-text-16;
+    border-radius: 8px;
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
+  }
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.file {
+  @include partialFlex(column);
+
+  p {
+    @include text-12;
+    color: $c-text-64;
+  }
+  h6 {
+    @include text-14;
+  }
+
+  &__wrapper {
+    width: 91%;
+    @include flex(row, space-between, center);
+    background: rgba(62, 80, 114, 0.08);
+    border-radius: 8px;
+    padding: 16px 30px 16px 20px;
+    margin-bottom: 40px;
+  }
+}

@@ -20,4 +20,8 @@ export class StudyDataFormComponent {
     this.form.markAllAsTouched();
   }
 
+  saveStudyData() {
+    console.log(this.form.value)
+  }
+
 }

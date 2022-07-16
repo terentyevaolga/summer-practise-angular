@@ -2,10 +2,7 @@
 
 .footer {
   &__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(row, space-between, center);
     max-width: 1180px;
     width: 80vw;
     margin: 60px auto;
@@ -15,10 +12,7 @@
     }
 
     &__nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      @include flex(row, center, center);
       column-gap: 28px;
 
       @include tablet720 {

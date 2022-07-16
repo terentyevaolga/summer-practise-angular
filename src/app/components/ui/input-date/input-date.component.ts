@@ -1,24 +1,22 @@
-import {Component, ChangeDetectionStrategy, Input, forwardRef} from '@angular/core';
+import {Component, ChangeDetectionStrategy, forwardRef} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
-  selector: 'app-drop-down-list',
-  templateUrl: './drop-down-list.component.html',
-  styleUrls: ['./drop-down-list.component.scss'],
+  selector: 'app-input-date',
+  templateUrl: './input-date.component.html',
+  styleUrls: ['./input-date.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DropDownListComponent),
+      useExisting: forwardRef(() => InputDateComponent),
       multi: true
     }
   ]
 })
-export class DropDownListComponent implements ControlValueAccessor {
+export class InputDateComponent implements ControlValueAccessor {
 
-  @Input() placeholder: string = '';
-  @Input() options: Array<string> = [];
-  value: string = ''
+  value: string = '';
 
   onChangeCallback = (v: string) => {}
   onTouchedCallback = () => {}

@@ -2,8 +2,7 @@
 
 :host {
   display: flex;
-  max-width: 1180px;
-  width: 82vw;
+  @include width(1180px, 82vw);
   background-color: $c-light-blue;
   border-radius: 16px;
   margin-top: 32px
@@ -12,14 +11,12 @@
 .section {
   display: flex;
   justify-content: space-between;
-  max-width: 980px;
-  width: 85%;
+  @include width(980px, 85%);
   margin: 0 auto;
   padding: 48px 0;
 
   &__info {
-    max-width: 280px;
-    width: 30%;
+    @include width(280px, 30%);
 
     h4 {
       @include text-18;
@@ -33,7 +30,6 @@
   }
 
   &__content {
-    max-width: 580px;
-    width: 60%;
+    @include width(580px, 60%);
   }
 }

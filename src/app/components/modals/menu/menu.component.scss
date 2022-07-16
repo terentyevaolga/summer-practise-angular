@@ -1,8 +1,7 @@
 @import "mixins";
 
 :host {
-  display: flex;
-  flex-direction: column;
+  @include partialFlex(column);
   background: white;
   outline: none;
   max-height: 100vh;

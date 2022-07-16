@@ -5,9 +5,6 @@
 }
 
 main {
-  max-width: 1180px;
-  width: 80vw;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -24,10 +21,9 @@ img {
 
 .block {
   &__description {
+    @include width(480px, 35vw);
     margin-top: 100px;
     margin-bottom: 100px;
-    max-width: 480px;
-    width: 35vw;
     @include laptop1150 {
       width: 80vw;
     }
@@ -53,9 +49,7 @@ img {
   }
 
   &__courses {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(column, space-between, flex-start);
     margin-bottom: 40px;
 
     h3 {
@@ -63,12 +57,10 @@ img {
     }
 
     &__list {
+      @include flex(row, space-between, flex-start);
+      flex-wrap: wrap;
       margin-top: 24px;
       margin-bottom: 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
 
       @include tablet840 {
         justify-content: center;

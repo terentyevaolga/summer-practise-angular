@@ -48,13 +48,10 @@
   }
 
   &__info {
-    display: flex;
-    flex-direction: column;
+    @include partialFlex(column);
 
     &__top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(row, space-between, center);
 
       &__btn {
         z-index: 2;

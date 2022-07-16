@@ -115,19 +115,20 @@
   >
     <app-form-header title='Последний этап' [step]="step"></app-form-header>
 
-    <app-drop-down-list
-      [items]="['Продуктовый дизайн', 'Лаборатория: IOS-разработка', 'QA. Тестирование для начинающих', 'Frontend-разработка', 'Java-разработка', 'Системная разработка']"
-    > Выберите направление
+    <app-drop-down-list placeholder='Выберите направление'
+                        [options]='directions'
+    >
     </app-drop-down-list>
 
-    <app-drop-down-list
-      [items]="['1', '2', '3', '4']"
-    > Выберите курс
+    <app-drop-down-list placeholder='Выберите курс'
+                        [options]='courses'
+    >
     </app-drop-down-list>
 
     <app-button theme="BLUE"
                 type='submit'
                 [wide]=true
+                (submit)='save()'
                 class='form__container__btn'
     >Завершить регистрацию
     </app-button>

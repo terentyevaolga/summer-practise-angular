@@ -20,4 +20,8 @@ export class ChangePasswordComponent {
     this.form.markAllAsTouched();
   }
 
+  savePassword() {
+    console.log(this.form.value)
+  }
+
 }

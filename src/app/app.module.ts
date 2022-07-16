@@ -38,6 +38,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { MenuComponent } from './components/modals/menu/menu.component';
 import { LayoutContainerComponent } from './components/containers/layout-container/layout-container.component';
 import { FileDownloadComponent } from './components/ui/file-download/file-download.component';
+import { FileUploadComponent } from './components/ui/file-upload/file-upload.component';
+import { InputDateComponent } from './components/ui/input-date/input-date.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +74,9 @@ import { FileDownloadComponent } from './components/ui/file-download/file-downlo
     SidebarPanelComponent,
     MenuComponent,
     LayoutContainerComponent,
-    FileDownloadComponent
+    FileDownloadComponent,
+    FileUploadComponent,
+    InputDateComponent
   ],
   imports: [
     BrowserModule,

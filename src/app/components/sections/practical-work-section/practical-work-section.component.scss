@@ -1,19 +1,15 @@
 @import "mixins";
 
 :host {
-  display: flex;
-  flex-direction: column;
+  @include partialFlex(column);
 }
 
 .practicalWork {
-  max-width: 780px;
-  width: 55vw;
+  @include width(780px, 55vw);
   margin-left: 200px;
 
   &__back {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex(row, flex-start, center);
 
     p {
       margin-left: 12px;

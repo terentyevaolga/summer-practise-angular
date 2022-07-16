@@ -4,19 +4,9 @@
   display: block;
 }
 
-main {
-  max-width: 1180px;
-  width: 80vw;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-}
-
 .profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
+  @include flex(row, center, center);
+  margin: 64px auto 0 auto;
 
   img {
     width: 100px;
@@ -28,8 +18,7 @@ main {
   }
 
   &__info {
-    display: flex;
-    flex-direction: column;
+    @include partialFlex(column);
     margin-left: 10px;
 
     h3 {

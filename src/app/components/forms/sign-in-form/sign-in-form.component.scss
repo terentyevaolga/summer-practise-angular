@@ -1,8 +1,7 @@
 @import "mixins";
 
 .form {
-  max-width: 468px;
-  width: 27vw;
+  @include width(498px, 27vw);
   background-color: $c-light-blue;
   border-radius: 16px;
   padding: 28px;

@@ -4,12 +4,11 @@
   display: block;
 }
 
-main {
-  max-width: 1180px;
-  width: 80vw;
-  margin: 30px auto;
+.courses {
+  margin-top: 50px;
+
+  &__outlet {
+    margin-top: -40px;
+  }
 }
 
-.outlet {
-  margin-top: -40px;
-}

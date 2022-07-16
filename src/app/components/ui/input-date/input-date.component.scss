@@ -1,0 +1,33 @@
+@import "mixins";
+
+input {
+  width: 96%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid $c-text-16;
+  padding: 20px 0 20px 16px;
+  outline: none;
+  font-family: Inter, sans-serif;
+
+  &:focus {
+    border: 1px solid $c-blue;
+  }
+}
+
+input[type="date"]::before {
+  width: 100%;
+  @include text-14;
+  font-family: Inter, sans-serif;
+  color: rgba($c-text-100, 0.4);
+  content: attr(data-placeholder);
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+  display: none
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+

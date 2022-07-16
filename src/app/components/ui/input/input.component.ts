@@ -44,5 +44,4 @@ export class InputComponent implements ControlValueAccessor {
     this.onChangeCallback(value.target.value)
     this.onTouchedCallback();
   }
-
 }

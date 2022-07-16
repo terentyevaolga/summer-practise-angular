@@ -1,5 +1,29 @@
 @import "colors";
 
+@mixin flex($fd, $jc, $ai) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin partialFlex($fd) {
+  display: flex;
+  flex-direction: $fd;
+}
+
+@mixin width($maxWidth, $width) {
+  max-width: $maxWidth;
+  width: $width;
+}
+
+@mixin basic($fs, $fw, $lh, $c) {
+  font-style: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  color: $c;
+}
+
 @mixin regular-style {
   font-style: normal;
   font-weight: 400;
@@ -41,45 +65,31 @@
 @mixin h1 {
   font-family: 'Neue Machina', sans-serif;
   @include adaptive-font(44, 28);
-  font-style: normal;
-  font-weight: bold;
-  line-height: 48px;
+  @include basic(normal, bold, 48px, black);
 }
 
 @mixin h2 {
   font-family: 'Neue Machina', sans-serif;
   @include adaptive-font(32, 24);
-  font-style: normal;
-  font-weight: bold;
-  line-height: 24px;
-  color: black;
+  @include basic(normal, bold, 24px, black);
 }
 
 @mixin h3 {
   font-family: 'Neue Machina', sans-serif;
   @include adaptive-font(28, 18);
-  font-style: normal;
-  font-weight: bold;
-  line-height: 24px;
-  color: black;
+  @include basic(normal, bold, 24px, black);
 }
 
 @mixin h4 {
   font-family: 'Neue Machina', sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 29px;
-  color: black;
+  font-size: 1.5rem;
+  @include basic(normal, bold, 29px, black);
 }
 
 @mixin h5 {
   font-family: 'Neue Machina', sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 19px;
-  color: black;
+  font-size: 1rem;
+  @include basic(normal, bold, 19px, black);
 }
 
 @mixin p {

@@ -1,9 +1,7 @@
 @import "mixins";
 
 .title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flex(row, flex-start, center);
   cursor: pointer;
   margin-left: 200px;
 

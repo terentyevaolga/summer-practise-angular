@@ -1,10 +1,7 @@
 @import "mixins";
 
 :host {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  @include flex(row, center, center);
 
   @include laptop1150 {
     flex-direction: column;

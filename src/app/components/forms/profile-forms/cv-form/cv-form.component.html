@@ -1,18 +1,7 @@
 <form [formGroup]='form'>
+  <app-file-upload formControlName='cvDownload'></app-file-upload>
 
-<!--  <div class="upload">-->
-<!--    <p>Нажмите &laquo;Загрузить&raquo; или перетащите-->
-<!--      сюда pdf, png, jpeg не&nbsp;более 3&nbsp;Мб</p>-->
-<!--    <app-button-->
-<!--      type='submit'-->
-<!--      theme='TRANSPARENT'-->
-<!--    >-->
-<!--      Загрузить CV-->
-<!--    </app-button>-->
-<!--  </div>-->
-
-  <app-drop-down-list>
-    Список технологий
+  <app-drop-down-list placeholder='Список технологий'>
   </app-drop-down-list>
 
   <app-textarea placeholder='Описание опыта'
@@ -25,5 +14,6 @@
   <app-button theme='GREY'
               type='submit'
               [disabled]=form.invalid
+              (submit)='saveCV()'
   >Сохранить</app-button>
 </form>

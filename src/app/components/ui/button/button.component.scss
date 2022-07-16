@@ -1,9 +1,7 @@
 @import "mixins";
 
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(row, center, center);
   border-radius: 8px;
   @include text-14;
   opacity: 1;

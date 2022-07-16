@@ -5,11 +5,12 @@
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  @include partialFlex(column);
   height: 100vh;
 }
 
 main {
+  @include width(1180px, 80vw);
+  margin: 0 auto;
   flex-grow: 1;
 }
