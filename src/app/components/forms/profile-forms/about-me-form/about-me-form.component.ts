@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {PhoneValidator} from "../../../../utils/validations.utils";
 
 @Component({
   selector: 'app-about-me-form',
@@ -16,7 +17,7 @@ export class AboutMeFormComponent {
       name: ['', [Validators.required]],
       surname: ['', [Validators.required]],
       birthDate: [''],
-      phone: [''],
+      phone: ['', [...PhoneValidator]],
       nickname: [''],
       city: ['']
     });

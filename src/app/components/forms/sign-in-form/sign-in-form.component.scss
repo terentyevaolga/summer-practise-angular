@@ -1,13 +1,18 @@
 @import "mixins";
 
 .form {
-  @include width(498px, 27vw);
+  @include width(498px, 31vw);
   background-color: $c-light-blue;
   border-radius: 16px;
-  padding: 28px;
 
   @include tablet920 {
     width: 70vw;
+  }
+
+  &__container {
+    padding: 28px;
+    height: 400px;
+    @include flex(column, space-between, normal);
   }
 
   &__btn {

@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {EmailValidator, PasswordValidators} from "../../../utils/validations.utils";
 
 @Component({
   selector: 'app-sign-in-form',
@@ -12,10 +13,13 @@ export class SignInFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      login: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.min(8)]]
+      login: ['', [...EmailValidator]],
+      password: ['', [...PasswordValidators]]
     });
-    // this.form.markAllAsTouched();
+  }
+
+  signIn() {
+    console.log(this.form.value)
   }
 
   control(name: string) {
@@ -25,5 +29,4 @@ export class SignInFormComponent {
   hasError(formControlName: string, errorName: string) {
     return this.control(formControlName)?.touched && this.control(formControlName)?.dirty && this.control(formControlName)?.hasError(errorName)
   }
-
 }

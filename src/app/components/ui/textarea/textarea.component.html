@@ -1,6 +1,9 @@
-<textarea
-  [placeholder]='placeholder'
-  (change)='onChange($event)'
-  autofocus
->
-</textarea>
+<div class='container'>
+  <textarea
+    (change)='onChange($event)'
+    autofocus
+  >
+  </textarea>
+  <label [class]="value && 'filled'">{{placeholder}}</label>
+</div>
+

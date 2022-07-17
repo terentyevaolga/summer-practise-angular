@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,7 +8,7 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from "./components/header/header.component";
 import {ButtonComponent} from "./components/ui/button/button.component";
 import {CourseCardComponent} from "./components/cards/course-card/course-card.component";
-import {SignupComponent} from "./pages/sign-pages/signup/signup.component";
+import {SignupComponent} from "./pages/signup/signup.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {MainComponent} from "./pages/main/main.component";
 import {InputComponent} from "./components/ui/input/input.component";
@@ -17,10 +18,9 @@ import { FormHeaderComponent } from './components/forms/form-header/form-header.
 import { FormFooterComponent } from './components/forms/form-footer/form-footer.component';
 import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
 import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-form.component';
-import { SigninComponent } from './pages/sign-pages/signin/signin.component';
+import { SigninComponent } from './pages/signin/signin.component';
 import { FormErrorMessageComponent } from './components/ui/form-error-message/form-error-message.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { ProfileSectionComponent } from './components/sections/profile-section/profile-section.component';
 import { AboutMeFormComponent } from './components/forms/profile-forms/about-me-form/about-me-form.component';
 import { StudyDataFormComponent } from './components/forms/profile-forms/study-data-form/study-data-form.component';
 import { CvFormComponent } from './components/forms/profile-forms/cv-form/cv-form.component';
@@ -36,10 +36,14 @@ import { PracticalWorkSectionComponent } from './components/sections/practical-w
 import { SidebarPanelComponent } from './components/modals/sidebar-panel/sidebar-panel.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { MenuComponent } from './components/modals/menu/menu.component';
-import { LayoutContainerComponent } from './components/containers/layout-container/layout-container.component';
+import { LayoutContainerComponent } from './containers/layout-container/layout-container.component';
 import { FileDownloadComponent } from './components/ui/file-download/file-download.component';
 import { FileUploadComponent } from './components/ui/file-upload/file-upload.component';
 import { InputDateComponent } from './components/ui/input-date/input-date.component';
+import { SignPageContainerComponent } from './containers/sign-page-container/sign-page-container.component';
+import { ProfileFormContainerComponent } from './containers/profile-form-container/profile-form-container.component';
+import { ButtonWithIconComponent } from './components/ui/button-with-icon/button-with-icon.component';
+import { SpinnerComponent } from './animation/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,6 @@ import { InputDateComponent } from './components/ui/input-date/input-date.compon
     SigninComponent,
     FormErrorMessageComponent,
     ProfileComponent,
-    ProfileSectionComponent,
     AboutMeFormComponent,
     StudyDataFormComponent,
     CvFormComponent,
@@ -76,7 +79,11 @@ import { InputDateComponent } from './components/ui/input-date/input-date.compon
     LayoutContainerComponent,
     FileDownloadComponent,
     FileUploadComponent,
-    InputDateComponent
+    InputDateComponent,
+    SignPageContainerComponent,
+    ProfileFormContainerComponent,
+    ButtonWithIconComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +91,7 @@ import { InputDateComponent } from './components/ui/input-date/input-date.compon
     AppRoutingModule,
     ReactiveFormsModule,
     DialogModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

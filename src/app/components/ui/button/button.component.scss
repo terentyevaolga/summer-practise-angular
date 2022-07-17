@@ -24,18 +24,6 @@
     padding: 16px 24px
   }
 
-  &__lightGrey {
-    @extend .btn;
-    background: $c-text-8;
-    padding: 10px;
-  }
-
-  &__white {
-    @extend .btn;
-    background: white;
-    padding: 5px 8px;
-  }
-
   &__default {
     @extend .btn;
     color: $c-text-100;
@@ -45,7 +33,7 @@
     @extend .btn;
     border: 1px solid $c-blue;
     color: $c-blue;
-    padding: 12px 24px;
+    padding: 1vw;
   }
 
   &__wide {

@@ -6,7 +6,8 @@
   <label [class]="value && 'filled'">{{placeholder}}</label>
 
   <ng-container *ngIf='password'>
-    <app-button (submit)='toggle()'
+    <app-button-with-icon
+                (submit)='toggle()'
                 theme='DEFAULT'
                 class='button'
     >
@@ -16,7 +17,7 @@
                   height='24px'
         ></app-icon>
       </ng-container>
-    </app-button>
+    </app-button-with-icon>
   </ng-container>
 </div>
 

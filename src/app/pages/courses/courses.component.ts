@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import {PracticalWorkService} from "../../services/practicalWork.service";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-courses',
@@ -12,10 +13,18 @@ export class CoursesComponent implements OnInit {
   practicalWork$ = this.practicalWorkService.practicalWork$
 
   constructor(
-    private practicalWorkService: PracticalWorkService
+    private practicalWorkService: PracticalWorkService,
+    private spinner: NgxSpinnerService,
+    private cdr: ChangeDetectorRef
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.spinner.show();
+
+    setTimeout(() => {
+      this.spinner.hide();
+      this.cdr.markForCheck();
+    }, 0);
   }
 
 }

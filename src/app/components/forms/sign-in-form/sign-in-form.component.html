@@ -2,43 +2,49 @@
   [formGroup]='form'
   class='form'
 >
-  <h5>Войдите в систему</h5>
-  <section>
-    <app-input
-      placeholder='Логин'
-      formControlName='login'
-    ></app-input>
-    <ng-container *ngIf="hasError('login', 'required')">
-      <app-form-error-message></app-form-error-message>
-    </ng-container>
-    <ng-container *ngIf="hasError('login', 'email')">
-      <app-form-error-message text='Неправильный логин'></app-form-error-message>
-    </ng-container>
+  <div class='form__container'>
+    <div>
+      <h5>Войдите в систему</h5>
+      <app-input
+        placeholder='Логин'
+        formControlName='login'
+      ></app-input>
+      <ng-container *ngIf="hasError('login', 'required')">
+        <app-form-error-message></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('login', 'pattern')">
+        <app-form-error-message text='Неправильный логин'></app-form-error-message>
+      </ng-container>
 
-    <app-input
-      [password]=true
-      placeholder='Пароль'
-      formControlName='password'
-    ></app-input>
-    <ng-container *ngIf="hasError('password', 'required')">
-      <app-form-error-message></app-form-error-message>
-    </ng-container>
-    <ng-container *ngIf="hasError('password', 'minlength')">
-      <app-form-error-message text='Длина пароля от 8 символов'></app-form-error-message>
-    </ng-container>
+      <app-input
+        [password]=true
+        placeholder='Пароль'
+        formControlName='password'
+      ></app-input>
+      <ng-container *ngIf="hasError('password', 'required')">
+        <app-form-error-message></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('password', 'minlength')">
+        <app-form-error-message text='Длина пароля от 8 символов'></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('password', 'pattern')">
+        <app-form-error-message text='Некорректный формат пароля'></app-form-error-message>
+      </ng-container>
 
-    <app-button theme="BLUE"
-                type='submit'
-                [wide]=true
-                [disabled]=form.invalid
-                class="form__btn"
-    >Войти
-    </app-button>
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  [disabled]=form.invalid
+                  (submit)='signIn()'
+                  class="form__btn"
+      >Войти
+      </app-button>
+    </div>
 
-  </section>
-  <app-form-footer text="У вас еще нет профиля?"
-                   routerLink="/signup"
-                   action="Зарегистрируйтесь"
-  ></app-form-footer>
+    <app-form-footer text="У вас еще нет профиля?"
+                     routerLink="/signup"
+                     action="Зарегистрируйтесь"
+    ></app-form-footer>
+  </div>
 </form>
 

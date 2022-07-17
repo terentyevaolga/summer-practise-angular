@@ -1,0 +1,26 @@
+@import "mixins";
+
+.btn {
+  @include flex(row, center, center);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding: 10px;
+
+  &__white {
+    @extend .btn;
+    background: white;
+  }
+
+  &__default {
+    @extend .btn;
+    color: $c-text-100;
+    padding: 0;
+  }
+
+  &__grey {
+    @extend .btn;
+    background: $c-text-8;
+  }
+}

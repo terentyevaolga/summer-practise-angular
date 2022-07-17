@@ -6,71 +6,87 @@
     [formGroup]='getGroup("userDetails")'
     *ngIf='step===1'
   >
-    <app-form-header title='Создайте свой профиль' [step]="step"></app-form-header>
-    <app-input
-      placeholder='Имя'
-      formControlName='name'
-    ></app-input>
-    <ng-container *ngIf="hasError('userDetails', 'name', 'required')">
-      <app-form-error-message></app-form-error-message>
-    </ng-container>
-    <ng-container *ngIf="hasError('userDetails','name', 'minlength')">
-      <app-form-error-message text='Имя слишком короткое'></app-form-error-message>
-    </ng-container>
-    <app-input
-      placeholder='Фамилия'
-      formControlName='surname'
-    ></app-input>
-    <ng-container *ngIf="hasError('userDetails','surname', 'required')">
-      <app-form-error-message></app-form-error-message>
-    </ng-container>
-    <ng-container *ngIf="hasError('userDetails','surname', 'minlength')">
-      <app-form-error-message text='Фамилия слишком короткая'></app-form-error-message>
-    </ng-container>
+    <div>
+      <app-form-header title='Создайте свой профиль' [step]="step"></app-form-header>
+      <app-input
+        placeholder='Имя'
+        formControlName='name'
+      ></app-input>
+      <ng-container *ngIf="hasError('userDetails', 'name', 'required')">
+        <app-form-error-message></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('userDetails','name', 'minlength')">
+        <app-form-error-message text='Минимальное число символов 2'></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('userDetails','name', 'maxlength')">
+        <app-form-error-message text='Максимальное число символов 15'></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('userDetails','name', 'pattern')">
+        <app-form-error-message text='Используйте только русский алфавит'></app-form-error-message>
+      </ng-container>
+      <app-input
+        placeholder='Фамилия'
+        formControlName='surname'
+      ></app-input>
+      <ng-container *ngIf="hasError('userDetails', 'surname', 'required')">
+        <app-form-error-message></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('userDetails','surname', 'minlength')">
+        <app-form-error-message text='Минимальное число символов 2'></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('userDetails','surname', 'maxlength')">
+        <app-form-error-message text='Максимальное число символов 15'></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('userDetails','surname', 'pattern')">
+        <app-form-error-message text='Используйте только русский алфавит'></app-form-error-message>
+      </ng-container>
 
-    <app-input
-      type='email'
-      placeholder='Электронная почта'
-      formControlName='email'
-    ></app-input>
-    <ng-container *ngIf="hasError('userDetails','email', 'required')">
-      <app-form-error-message></app-form-error-message>
-    </ng-container>
-    <ng-container *ngIf="hasError('userDetails','email', 'pattern')">
-      <app-form-error-message text='Недопустимый формат почты'></app-form-error-message>
-    </ng-container>
-    <app-button theme="BLUE"
-                type='submit'
-                [wide]=true
-                (submit)="next()"
-    >Дальше
-    </app-button>
-    <p>Нажимая на&nbsp;кнопку, я&nbsp;соглашаюсь на&nbsp;обработку
-      персональных данных</p>
+      <app-input
+        type='email'
+        placeholder='Электронная почта'
+        formControlName='email'
+      ></app-input>
+      <ng-container *ngIf="hasError('userDetails','email', 'required')">
+        <app-form-error-message></app-form-error-message>
+      </ng-container>
+      <ng-container *ngIf="hasError('userDetails','email', 'pattern')">
+        <app-form-error-message text='Недопустимый формат почты'></app-form-error-message>
+      </ng-container>
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  (submit)="next()"
+      >Дальше
+      </app-button>
+      <p>Нажимая на&nbsp;кнопку, я&nbsp;соглашаюсь на&nbsp;обработку
+        персональных данных</p>
+    </div>
     <app-form-footer></app-form-footer>
   </form>
 
   <div *ngIf='step===2'
        class='form__container'
   >
-    <app-form-header title='Проверьте почту' [step]="step"></app-form-header>
+    <div>
+      <app-form-header title='Проверьте почту' [step]="step"></app-form-header>
 
-    <div class='form__container__text'>
-      <p>Чтобы продолжить регистрацию, перейдите по&nbsp;ссылке в&nbsp;письме, мы&nbsp;отправили его на&nbsp;вашу
-        почту</p>
+      <div class='form__container__text'>
+        <p>Чтобы продолжить регистрацию, перейдите по&nbsp;ссылке в&nbsp;письме, мы&nbsp;отправили его на&nbsp;вашу
+          почту</p>
 
-      <p>Если вы&nbsp;не&nbsp;получили письмо, нажмите &laquo;Отправить повторно&raquo; через 00:04 или напишите на&nbsp;нашу
-        почту</p>
+        <p>Если вы&nbsp;не&nbsp;получили письмо, нажмите &laquo;Отправить повторно&raquo; через 00:04 или напишите на&nbsp;нашу
+          почту</p>
+      </div>
+
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  (submit)="next()"
+                  class='form__container__btn'
+      >Дальше
+      </app-button>
+
     </div>
-
-    <app-button theme="BLUE"
-                type='submit'
-                [wide]=true
-                (submit)="next()"
-                class='form__container__btn'
-    >Дальше
-    </app-button>
-
     <app-form-footer></app-form-footer>
   </div>
 
@@ -79,32 +95,33 @@
     [formGroup]='getGroup("passwordDetails")'
     *ngIf='step===3'
   >
-    <app-form-header title='Придумайте пароль' [step]="step"></app-form-header>
+    <div>
+      <app-form-header title='Придумайте пароль' [step]="step"></app-form-header>
 
-    <app-input
-      [password]=true
-      placeholder='Пароль'
-      formControlName='password'
-    ></app-input>
-    <h6>Придумайте пароль, в котором содержится от 8 символов</h6>
+      <app-input
+        [password]=true
+        placeholder='Пароль'
+        formControlName='password'
+      ></app-input>
+      <h6>Придумайте пароль, в котором содержится от 8 символов</h6>
 
-    <app-input
-      [password]=true
-      placeholder='Повторите пароль'
-      formControlName='repassword'
-    ></app-input>
+      <app-input
+        [password]=true
+        placeholder='Повторите пароль'
+        formControlName='repassword'
+      ></app-input>
 
-    <!--    тут еще должна быть проверка на совпадение паролей-->
+      <!--    тут еще должна быть проверка на совпадение паролей-->
 
 
-    <app-button theme="BLUE"
-                type='submit'
-                [wide]=true
-                (submit)="next()"
-                class='form__container__btn'
-    >Дальше
-    </app-button>
-
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  (submit)="next()"
+                  class='form__container__btn'
+      >Дальше
+      </app-button>
+    </div>
     <app-form-footer></app-form-footer>
   </form>
 
@@ -113,26 +130,30 @@
     [formGroup]='getGroup("chooseCourse")'
     *ngIf='step===4'
   >
-    <app-form-header title='Последний этап' [step]="step"></app-form-header>
+    <div>
+      <app-form-header title='Последний этап' [step]="step"></app-form-header>
 
-    <app-drop-down-list placeholder='Выберите направление'
-                        [options]='directions'
-    >
-    </app-drop-down-list>
+      <app-drop-down-list placeholder='Выберите направление'
+                          [options]='directions'
+                          formControlName='direction'
+      >
+      </app-drop-down-list>
 
-    <app-drop-down-list placeholder='Выберите курс'
-                        [options]='courses'
-    >
-    </app-drop-down-list>
+      <app-drop-down-list placeholder='Выберите курс'
+                          [options]='courses'
+                          formControlName='course'
+      >
+      </app-drop-down-list>
 
-    <app-button theme="BLUE"
-                type='submit'
-                [wide]=true
-                (submit)='save()'
-                class='form__container__btn'
-    >Завершить регистрацию
-    </app-button>
+      <app-button theme="BLUE"
+                  type='submit'
+                  [wide]=true
+                  (submit)='signUp()'
+                  class='form__container__btn'
+      >Завершить регистрацию
+      </app-button>
 
+    </div>
     <app-form-footer></app-form-footer>
   </form>
 </form>

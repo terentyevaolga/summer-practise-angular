@@ -53,7 +53,9 @@
               "src/styles.sass"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["./src/app/styles"]
+              "includePaths": [
+                "./src/app/styles"
+              ]
             },
             "scripts": []
           },
@@ -86,7 +88,10 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            }
+            },
+            "styles": [
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
+            ]
           },
           "defaultConfiguration": "production"
         },

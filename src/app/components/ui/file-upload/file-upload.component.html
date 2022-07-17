@@ -1,5 +1,4 @@
-<div class='upload__wrapper'
-     (dragover)='onDrag($event)'>
+<div class='upload__wrapper'>
   <input type='file'
          #fileUpload
          (change)='onChange($event)'
@@ -22,11 +21,11 @@
      class='file__wrapper'>
   <div class='file'>
     <h6>{{file.name}}</h6>
-    <p>{{toMb()}} мб</p>
+    <p>{{toMb(file)}} мб</p>
   </div>
 
   <app-button theme='DEFAULT'
-              (submit)='close()'
+              (submit)='delete()'
   >
     <app-icon name='close'
               width='20px'

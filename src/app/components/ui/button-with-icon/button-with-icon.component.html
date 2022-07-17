@@ -1,0 +1,9 @@
+<button
+  class='btn'
+  [class.btn__white]="theme === 'WHITE'"
+  [class.btn__default]="theme === 'DEFAULT'"
+  [class.btn__grey]="theme === 'GREY'"
+  (click)='submit.emit()'
+>
+  <ng-content></ng-content>
+</button>

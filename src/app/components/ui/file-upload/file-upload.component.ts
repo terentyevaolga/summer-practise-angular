@@ -16,7 +16,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 })
 export class FileUploadComponent implements ControlValueAccessor {
 
-  file!: File;
+  file!: File | null;
 
   onChangeCallback = (v: any) => {
   }
@@ -36,21 +36,18 @@ export class FileUploadComponent implements ControlValueAccessor {
 
   onChange(value: any): void {
     this.file = value.target.files[0]
-    this.onChangeCallback(value.target.files[0])
+    this.onChangeCallback(this.file)
     this.onTouchedCallback();
   }
 
-  toMb(): string {
-    return (this.file.size / (1024 * 1024)).toFixed(2);
+  toMb(file: File): string {
+    if (file !== null) {
+      return (file.size / (1024 * 1024)).toFixed(2);
+    }
+    return '';
   }
 
-  onDrag(event: any): void{
-    console.log(event);
-    console.log("file")
-    event.preventDefault();
-  }
-
-  close() {
-
+  delete() {
+    this.file = null;
   }
 }

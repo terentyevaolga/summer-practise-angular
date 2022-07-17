@@ -1,23 +1,51 @@
 @import "mixins";
 
-textarea {
-  width: 96%;
-  @include text-14;
-  padding: 20px 0 60px 16px;
-  border: 1px solid $c-text-16;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  outline: none;
-  resize: vertical;
-  font-family: Inter, sans-serif;
+.container {
+  @include partialFlex(column);
+  position: relative;
 
-  &:focus {
-    border: 1px solid $c-blue;
+  .filled {
+    transform: translate(0, 8px) scale(0.9)
+  }
+
+  &:focus-within {
+    label {
+      transform: translate(0, 8px) scale(0.9)
+    }
+  }
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(0, 20px) scale(1);
+    transform-origin: top left;
+    transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    left: 16px;
+
+    @include text-14;
+    color: $c-text-40;
+  }
+
+  textarea {
+    width: 96%;
+    @include text-14;
+    padding: 20px 0 60px 16px;
+    border: 1px solid $c-text-16;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: none;
+    resize: vertical;
+    font-family: Inter, sans-serif;
+
+    &:focus {
+      border: 1px solid $c-blue;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    font-family: Inter, sans-serif;
+    color: rgba($c-text-100, 0.4);
   }
 }
 
-::-webkit-input-placeholder {
-  font-family: Inter, sans-serif;
-  color: rgba($c-text-100, 0.4);
-}
 

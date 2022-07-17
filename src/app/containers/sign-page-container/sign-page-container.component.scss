@@ -1,10 +1,6 @@
-@import 'mixins';
+@import "mixins";
 
 :host {
-  display: block;
-}
-
-main {
   @include flex(row, space-between, flex-start);
   margin-top: 164px;
 
@@ -15,7 +11,7 @@ main {
   }
 }
 
-.section {
+section {
   @include width(548px, 38vw);
 
   @include tablet920 {
@@ -50,4 +46,3 @@ main {
     margin-top: 24px;
   }
 }
-

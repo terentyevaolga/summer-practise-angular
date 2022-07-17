@@ -11,8 +11,9 @@
   }
 
   &__container {
-    margin: 0 auto;
     padding: 28px;
+    height: 462px;
+    @include flex(column, space-between, normal);
 
     &__text {
       margin-bottom: 190px;
