@@ -1,0 +1,39 @@
+@import "mixins";
+
+.form {
+  @include width(468px, 32vw);
+  height: 518px;
+  background-color: $c-light-blue;
+  border-radius: 16px;
+
+  @include tablet920 {
+    width: 70vw;
+  }
+
+  &__container {
+    padding: 28px;
+    height: 462px;
+    //@include flex(column, space-between, normal);
+
+    &__text {
+      margin-bottom: 190px;
+    }
+
+    &__btn {
+      margin: 12px 0;
+    }
+
+    p {
+      @include text-14;
+      color: $c-text-40;
+      margin: 12px 0;
+    }
+
+    h6 {
+      @include text-14;
+      color: $c-text-40;
+      margin: -15px 0 10px 8px;
+    }
+  }
+}
+

@@ -6,8 +6,10 @@ export const EmailRegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|
 
 
 export const PasswordSpecialSymbols = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-export const NumbersRegExp = /\d/;
 export const RussianLettersPattern = /^[a-zа-яё]+$/i;
+export const EnglishLettersPattern = /^[A-Za-z]+$/i;
+export const GroupRegExp = /(\d+[-]|\d)/;
+export const CourseRegExp = /^[1-4]+$/i;
 
 export const NameValidators = [
   Validators.required,
@@ -30,7 +32,35 @@ export const PasswordValidators = [
 export const EmailValidator = [
   Validators.required,
   Validators.pattern(EmailRegExp)
-]
+];
+
+export const NicknameValidator = [
+  Validators.required,
+  Validators.pattern(EnglishLettersPattern)
+];
+
+export const CityValidator = [
+  Validators.required,
+  Validators.minLength(2),
+  Validators.pattern(RussianLettersPattern)
+];
+
+export const UniversityValidator = [
+  Validators.required,
+  Validators.minLength(3),
+  Validators.pattern(RussianLettersPattern)
+];
+
+export const CourseValidator = [
+  Validators.required,
+  Validators.maxLength(1),
+  Validators.pattern(CourseRegExp)
+];
+
+export const GroupValidator = [
+  Validators.required,
+  Validators.pattern(GroupRegExp)
+];
 
 
 export const CheckIfErrorEmpty = (error: ValidationErrors | null) => {
@@ -53,10 +83,8 @@ export const validatePasswords = (
       return { notSame: true };
     }
 
-    // @ts-ignore
-    delete passwordErrors?.duplicateEmail;
-    // @ts-ignore
-    delete confirmPasswordErrors?.notSame;
+    delete passwordErrors?.['duplicateEmail'];
+    delete confirmPasswordErrors?.['notSame'];
     password?.setErrors(CheckIfErrorEmpty(passwordErrors), { emitEvent: false });
     confirmPassword?.setErrors(CheckIfErrorEmpty(confirmPasswordErrors), { emitEvent: false });
 

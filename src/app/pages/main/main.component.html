@@ -11,6 +11,8 @@
     <section class='block__courses'>
       <h3>Твои курсы</h3>
 
+<!--      <app-count-down-timer [init]='4'></app-count-down-timer>-->
+
       <div class='block__courses__list'>
         <ng-container *ngFor='let item of courses$| async'>
           <app-course-card [title]="item.title"

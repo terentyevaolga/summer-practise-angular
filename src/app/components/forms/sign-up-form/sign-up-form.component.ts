@@ -1,6 +1,6 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {EmailValidator, NameValidators, PasswordValidators} from "../../../utils/validations.utils";
+import {EmailValidator, NameValidators, PasswordValidators, validatePasswords} from "../../../utils/validations.utils";
 
 @Component({
   selector: 'app-sign-up-form',
@@ -35,15 +35,17 @@ export class SignUpFormComponent {
 
       passwordDetails: this.fb.group({
         password: ['', [...PasswordValidators]],
-        repassword: ['', [...PasswordValidators]],
+        repassword: ['', [...PasswordValidators]]
+      }, {
+        validators: validatePasswords('password', 'repassword'),
       }),
 
       chooseCourse: this.fb.group({
-        direction: [''],
-        course: ['']
+        direction: ['', Validators.required],
+        course: ['', Validators.required]
       })
     })
-    this.form.valueChanges.subscribe(res=>{
+    this.form.valueChanges.subscribe(res => {
       console.log(this.form);
     })
   }

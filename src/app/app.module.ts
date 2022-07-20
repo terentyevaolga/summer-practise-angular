@@ -44,6 +44,13 @@ import { SignPageContainerComponent } from './containers/sign-page-container/sig
 import { ProfileFormContainerComponent } from './containers/profile-form-container/profile-form-container.component';
 import { ButtonWithIconComponent } from './components/ui/button-with-icon/button-with-icon.component';
 import { SpinnerComponent } from './animation/spinner/spinner.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CountDownTimerComponent } from './components/count-down-timer/count-down-timer.component';
+import { FormContainerComponent } from './components/forms/form-container/form-container.component';
+import { UserDetailsComponent } from './components/forms/sign-up-forms/user-details/user-details.component';
+import { EmailLetterComponent } from './components/forms/sign-up-forms/email-letter/email-letter.component';
+import { PasswordDetailsComponent } from './components/forms/sign-up-forms/password-details/password-details.component';
+import { ChoiceCourseComponent } from './components/forms/sign-up-forms/choice-course/choice-course.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +90,14 @@ import { SpinnerComponent } from './animation/spinner/spinner.component';
     SignPageContainerComponent,
     ProfileFormContainerComponent,
     ButtonWithIconComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PageNotFoundComponent,
+    CountDownTimerComponent,
+    FormContainerComponent,
+    UserDetailsComponent,
+    EmailLetterComponent,
+    PasswordDetailsComponent,
+    ChoiceCourseComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +105,7 @@ import { SpinnerComponent } from './animation/spinner/spinner.component';
     AppRoutingModule,
     ReactiveFormsModule,
     DialogModule,
-    NgxSpinnerModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

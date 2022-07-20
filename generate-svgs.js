@@ -22,7 +22,8 @@ const generateSprite = (outputPath = './src/assets/sprite.svg') => {
   svgSprites.sort((a, b) => a.name.localeCompare(b.name));
 
   svgSprites.forEach(file => {
-    sprite = sprite.add(file.name.split('.')[0], fs.readFileSync(path.join(file.folder, file.name), 'utf8'));
+    sprite = sprite.add(file.name.split('.')[0],
+      fs.readFileSync(path.join(file.folder, file.name), 'utf8'));
   });
 
   fs.writeFileSync(outputPath, sprite);

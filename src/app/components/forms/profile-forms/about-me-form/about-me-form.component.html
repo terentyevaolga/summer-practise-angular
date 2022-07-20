@@ -1,38 +1,72 @@
 <form [formGroup]='form'>
-  <app-input
-    placeholder='Имя'
-    formControlName='name'
-  ></app-input>
+  <app-input placeholder='Имя'
+             formControlName='name'></app-input>
 
-  <app-input
-    placeholder='Фамилия'
-    formControlName='surname'
-  ></app-input>
+  <ng-container *ngIf='hasError("name", "pattern")'>
+    <app-form-error-message text='Используйте только русские буквы'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("name", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
 
-  <app-input-date
-    formControlName='birthDate'>
-  </app-input-date>
+  <app-input placeholder='Фамилия'
+             formControlName='surname'></app-input>
 
-  <app-input
-    placeholder='Номер телефона'
-    formControlName='phone'
-  ></app-input>
+  <ng-container *ngIf='hasError("surname", "pattern")'>
+    <app-form-error-message text='Используйте только русские буквы'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("surname", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
 
-  <app-input
-    placeholder='Никнейм в телеграме'
-    formControlName='nickname'
-  ></app-input>
+  <app-input-date placeholder="Дата рождения"
+                  formControlName='birthDate'></app-input-date>
 
-  <app-input
-    placeholder='Город'
-    formControlName='city'
-  ></app-input>
+  <ng-container *ngIf='hasError("birthDate", "pattern")'>
+    <app-form-error-message text='Неверный формат даты рождения'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("birthDate", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+
+  <app-input placeholder='Номер телефона'
+             formControlName='phone'></app-input>
+
+  <ng-container *ngIf='hasError("phone", "pattern")'>
+    <app-form-error-message text='Неверный формат номера'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("phone", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+
+  <app-input placeholder='Никнейм в телеграме'
+             formControlName='nickname'></app-input>
+
+  <ng-container *ngIf='hasError("nickname", "pattern")'>
+    <app-form-error-message text='Используйте только латинские буквы'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("nickname", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+
+  <app-input placeholder='Город'
+             formControlName='city'></app-input>
+
+  <ng-container *ngIf='hasError("city", "pattern")'>
+    <app-form-error-message text='Используйте только латинские буквы'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("city", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("city", "minlength")'>
+    <app-form-error-message text='Минимальное число символов 2'></app-form-error-message>
+  </ng-container>
 
 
   <app-button
     theme='GREY'
     type='submit'
-    [disabled]=form.invalid
+    [disabled]='!form.valid'
     (submit)='saveAboutMe()'
   >
     Сохранить

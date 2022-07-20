@@ -1,0 +1,46 @@
+<form
+  [formGroup]='userDetails'
+>
+  <div>
+    <app-form-header title='Создайте свой профиль'></app-form-header>
+    <app-input
+      placeholder='Имя'
+      formControlName='name'
+    ></app-input>
+    <ng-container *ngIf="hasError('name', 'required')">
+      <app-form-error-message></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('name', 'minlength')">
+      <app-form-error-message text='Минимальное число символов 2'>
+      </app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('name', 'maxlength')">
+      <app-form-error-message text='Максимальное число символов 15'></app-form-error-message>
+    </ng-container>
+    <ng-container *ngIf="hasError('name', 'pattern')">
+      <app-form-error-message text='Используйте только русский алфавит'></app-form-error-message>
+    </ng-container>
+
+    <app-input
+      placeholder='Фамилия'
+      formControlName='surname'
+    ></app-input>
+
+    <app-input
+      type='email'
+      placeholder='Электронная почта'
+      formControlName='email'
+    ></app-input>
+
+    <app-button theme="BLUE"
+                type='submit'
+                [wide]=true
+                (submit)="next()"
+                routerLink="/signup/email"
+    >Дальше
+    </app-button>
+    <p>Нажимая на&nbsp;кнопку, я&nbsp;соглашаюсь на&nbsp;обработку
+      персональных данных</p>
+  </div>
+  <app-form-footer></app-form-footer>
+</form>

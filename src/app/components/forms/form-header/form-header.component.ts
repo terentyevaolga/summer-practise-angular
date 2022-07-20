@@ -10,5 +10,6 @@ export class FormHeaderComponent {
 
   @Input() title: string = '';
   @Input() step: number = 1;
+  @Input() hasSteps: boolean = true;
 
 }

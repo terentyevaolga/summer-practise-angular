@@ -8,6 +8,18 @@ import {CoursesComponent} from "./pages/courses/courses.component";
 import {
   PracticalWorkSectionComponent
 } from "./components/sections/practical-work-section/practical-work-section.component";
+import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
+import {UserDetailsComponent} from "./components/forms/sign-up-forms/user-details/user-details.component";
+import {EmailLetterComponent} from "./components/forms/sign-up-forms/email-letter/email-letter.component";
+import {PasswordDetailsComponent} from "./components/forms/sign-up-forms/password-details/password-details.component";
+import {ChoiceCourseComponent} from "./components/forms/sign-up-forms/choice-course/choice-course.component";
+
+const signUpRoutes: Routes = [
+  {path: '', component: UserDetailsComponent},
+  {path: 'email', component: EmailLetterComponent},
+  {path: 'password', component: PasswordDetailsComponent},
+  {path: 'choice', component: ChoiceCourseComponent},
+]
 
 const routes: Routes = [
   {
@@ -15,12 +27,13 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: 'signup',
-    component: SignupComponent
-  },
-  {
     path: 'signin',
     component: SigninComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    // children: signUpRoutes
   },
   {
     path: 'profile',
@@ -35,6 +48,11 @@ const routes: Routes = [
         component: PracticalWorkSectionComponent
       }
     ]
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: PageNotFoundComponent
   }
 ];
 

@@ -1,0 +1,30 @@
+<form
+  class='form__container'
+  [formGroup]='choiceCourse'
+>
+  <div>
+    <app-form-header title='Последний этап'></app-form-header>
+
+    <app-drop-down-list selectedOption='Выберите направление'
+                        [optionsList]='directions'
+                        formControlName='direction'
+    >
+    </app-drop-down-list>
+
+    <app-drop-down-list selectedOption='Выберите курс'
+                        [optionsList]='courses'
+                        formControlName='course'
+    >
+    </app-drop-down-list>
+
+    <app-button theme="BLUE"
+                type='submit'
+                [wide]=true
+                (submit)='signUp()'
+                class='form__container__btn'
+    >Завершить регистрацию
+    </app-button>
+
+  </div>
+  <app-form-footer></app-form-footer>
+</form>

@@ -1,10 +1,10 @@
-import {Component, ChangeDetectionStrategy, forwardRef} from '@angular/core';
+import {Component, ChangeDetectionStrategy, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'app-input-date',
   templateUrl: './input-date.component.html',
-  styleUrls: ['./input-date.component.scss'],
+  styleUrls: ['input-date.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
@@ -16,7 +16,11 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 })
 export class InputDateComponent implements ControlValueAccessor {
 
+  @Input() date: boolean = false;
+  @Input() placeholder: string = '';
+
   value: string = '';
+
 
   onChangeCallback = (v: string) => {}
   onTouchedCallback = () => {}
@@ -37,4 +41,5 @@ export class InputDateComponent implements ControlValueAccessor {
     this.onChangeCallback(value.target.value)
     this.onTouchedCallback();
   }
+
 }

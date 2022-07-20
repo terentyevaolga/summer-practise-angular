@@ -16,12 +16,20 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 })
 export class DropDownListComponent implements ControlValueAccessor {
 
-  @Input() placeholder: string = '';
-  @Input() options: Array<string> = [];
-  value: string = ''
+  @Input() optionsList: Array<string> = [];
+  @Input() selectedOption: string = ''
+  show: boolean = false
+  value: string = '';
 
-  onChangeCallback = (v: string) => {}
-  onTouchedCallback = () => {}
+  setShow(): void {
+    this.show = !this.show
+  }
+
+  onChangeCallback = (v: string) => {
+  }
+
+  onTouchedCallback = () => {
+  }
 
   registerOnChange(fn: any): void {
     this.onChangeCallback = fn;
@@ -34,9 +42,11 @@ export class DropDownListComponent implements ControlValueAccessor {
   writeValue(obj: any): void {
   }
 
-  onChange(value: any): void{
-    this.value = value.target.value
-    this.onChangeCallback(value.target.value)
+  onChange(value: string): void {
+    this.value = value
+    this.selectedOption = value;
+    this.show = false;
+    this.onChangeCallback(value)
     this.onTouchedCallback();
   }
 }

@@ -1,24 +1,46 @@
 <form [formGroup]='form'>
 
-  <app-input
-    placeholder='Универ'
-    formControlName='university'
-  ></app-input>
+  <app-input placeholder='Универ'
+             formControlName='university'></app-input>
 
-  <app-input
-    placeholder='Курс'
-    formControlName='course'
-  ></app-input>
+  <ng-container *ngIf='hasError("university", "pattern")'>
+    <app-form-error-message text='Используйте только русские буквы'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("university", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("university", "minlength")'>
+    <app-form-error-message text='Минимальное число символов 3'></app-form-error-message>
+  </ng-container>
 
-  <app-input
-    placeholder='Группа'
-    formControlName='group'
-  ></app-input>
+  <app-input placeholder='Курс'
+             formControlName='course'></app-input>
+
+  <ng-container *ngIf='hasError("course", "pattern")'>
+    <app-form-error-message text='Выберите свой курс (1, 2, 3 или 4)'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("course", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("course", "maxlength")'>
+    <app-form-error-message text='аксимальное число символов 1'></app-form-error-message>
+  </ng-container>
+
+
+  <app-input placeholder='Группа'
+             formControlName='group'></app-input>
+
+  <ng-container *ngIf='hasError("group", "pattern")'>
+    <app-form-error-message text='Неверный формат номера группы'></app-form-error-message>
+  </ng-container>
+  <ng-container *ngIf='hasError("group", "required")'>
+    <app-form-error-message></app-form-error-message>
+  </ng-container>
 
   <app-button
     theme='GREY'
     type='submit'
-    [disabled]=form.invalid
+    [disabled]='!form.valid'
     (submit)='saveStudyData()'
   >
     Сохранить

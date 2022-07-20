@@ -1,14 +1,22 @@
-<select (change)='onChange($event)'
-        required>
-  <option disabled
-          selected
-  >{{placeholder}}</option>
-  <option *ngFor='let item of options'
-  >{{item}}</option>
-</select>
+<div class='dropdown'>
+  <button class='dropdown__button'
+          (click)='setShow()'>
+    {{selectedOption}}
+  </button>
+  <app-button-with-icon (submit)='setShow()'>
+    <app-icon class='dropdown__icon'
+              name='dropdown'
+              width='15px'
+              height='15px'></app-icon>
+  </app-button-with-icon>
+</div>
 
-<app-icon name='dropdown'
-          class='dropdown'
-          width='15px'
-          height='15px'
-></app-icon>
+<div class='options__wrapper'>
+  <div class='options'
+       *ngIf='show'>
+    <ul>
+      <li *ngFor='let item of optionsList'
+          (click)='onChange(item)'>{{item}}</li>
+    </ul>
+  </div>
+</div>

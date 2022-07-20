@@ -3,11 +3,6 @@
 :host {
   @include flex(row, space-between, center);
 
-  h5 {
-    font-family: "Neue Machina", serif;
-    @include text-18;
-  }
-
   p {
     @include text-14;
   }

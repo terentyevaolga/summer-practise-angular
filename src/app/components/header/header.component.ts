@@ -13,13 +13,13 @@ export class HeaderComponent {
   constructor(private dialog: DialogService) {
   }
 
+  openSidebarPanel() {
+    this.dialog.openDialog(SidebarPanelComponent);
+  }
+
   focus() {
     this.dialog.openDialog(MenuComponent, {
       backdropClass: 'backdrop'
     })
-  }
-
-  openSidebarPanel() {
-    this.dialog.openDialog(SidebarPanelComponent);
   }
 }

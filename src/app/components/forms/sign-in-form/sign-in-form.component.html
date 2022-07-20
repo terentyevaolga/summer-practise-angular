@@ -4,11 +4,12 @@
 >
   <div class='form__container'>
     <div>
-      <h5>Войдите в систему</h5>
+      <app-form-header title='Войдите в систему'
+                       [hasSteps]=false></app-form-header>
       <app-input
         placeholder='Логин'
-        formControlName='login'
-      ></app-input>
+        formControlName='login'></app-input>
+
       <ng-container *ngIf="hasError('login', 'required')">
         <app-form-error-message></app-form-error-message>
       </ng-container>
@@ -19,23 +20,23 @@
       <app-input
         [password]=true
         placeholder='Пароль'
-        formControlName='password'
-      ></app-input>
+        formControlName='password'></app-input>
+
       <ng-container *ngIf="hasError('password', 'required')">
         <app-form-error-message></app-form-error-message>
       </ng-container>
       <ng-container *ngIf="hasError('password', 'minlength')">
-        <app-form-error-message text='Длина пароля от 8 символов'></app-form-error-message>
+        <app-form-error-message text='Минимальная длина пароля 8 символов'></app-form-error-message>
       </ng-container>
       <ng-container *ngIf="hasError('password', 'pattern')">
-        <app-form-error-message text='Некорректный формат пароля'></app-form-error-message>
+        <app-form-error-message text='Пароль должен сожержать латинские заглавные и строчные буквы, а также цифру'></app-form-error-message>
       </ng-container>
 
       <app-button theme="BLUE"
                   type='submit'
                   [wide]=true
-                  [disabled]=form.invalid
                   (submit)='signIn()'
+                  [disabled]='!form.valid'
                   class="form__btn"
       >Войти
       </app-button>

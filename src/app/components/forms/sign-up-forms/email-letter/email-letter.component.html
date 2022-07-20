@@ -1,0 +1,23 @@
+<div>
+  <div>
+    <app-form-header title='Проверьте почту'></app-form-header>
+
+    <div class='form__container__text'>
+      <p>Чтобы продолжить регистрацию, перейдите по&nbsp;ссылке в&nbsp;письме, мы&nbsp;отправили его на&nbsp;вашу
+        почту</p>
+
+      <p>Если вы&nbsp;не&nbsp;получили письмо, нажмите &laquo;Отправить повторно&raquo; через 04:00 или напишите на&nbsp;нашу
+        почту</p>
+    </div>
+
+    <app-button theme="BLUE"
+                type='submit'
+                [wide]=true
+                routerLink='/signup/password'
+                class='form__container__btn'
+    >Дальше
+    </app-button>
+
+  </div>
+  <app-form-footer></app-form-footer>
+</div>
